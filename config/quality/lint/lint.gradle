@@ -1,0 +1,9 @@
+//Task for checking code quality with Android Lint tool
+android {
+    lintOptions {
+        abortOnError true
+        xmlReport false
+        htmlReport true
+        lintConfig file("$project.rootDir/config/quality/lint/lint.xml")
+    }
+}

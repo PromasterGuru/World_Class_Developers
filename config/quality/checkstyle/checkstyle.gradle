@@ -1,0 +1,21 @@
+apply plugin: 'checkstyle'
+
+
+//Task for checking code quality with CheckStyle tool
+task checkstyle(type: Checkstyle) {
+    configFile file("$project.rootDir/config/quality/checkstyle/checkstyle.xml")
+
+    source 'src'
+    include '**/*.java'
+    exclude '**/gen/**'
+    exclude '**/R.java'
+    exclude '**/BuildConfig.java'
+
+    classpath = files()
+    showViolations true
+
+    reports {
+        xml.enabled = true
+        html.enabled = true
+    }
+}

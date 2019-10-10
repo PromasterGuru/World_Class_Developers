@@ -1,0 +1,24 @@
+apply plugin: 'findbugs'
+
+//Task for checking code quality with Findbugs tool
+task findbugs(type: FindBugs, dependsOn: "assembleDebug") {
+    ignoreFailures = false
+    effort = "max"
+    reportLevel = "high"
+    excludeFilter = file("${project.rootDir}/config/quality/findbugs/findbugs.xml")
+    classes = files("$project.buildDir/intermediates/classes")
+
+    source = fileTree('src/main/java/')
+    include '**/*.java'
+    exclude '**/gen/**'
+    exclude '**/R.java'
+    exclude '**/BuildConfig.java'
+
+
+    reports {
+        xml.enabled = false
+        html.enabled = true
+    }
+
+    classpath = files()
+}

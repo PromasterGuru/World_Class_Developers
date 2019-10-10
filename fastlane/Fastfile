@@ -1,0 +1,76 @@
+# This file contains the fastlane.tools configuration
+# You can find the documentation at https://docs.fastlane.tools
+#
+# For a list of all available actions, check out
+#
+#     https://docs.fastlane.tools/actions
+#
+# For a list of all available plugins, check out
+#
+#     https://docs.fastlane.tools/plugins/available-plugins
+#
+
+# Uncomment the line if you want fastlane to automatically update itself
+update_fastlane
+
+default_platform(:android)
+
+
+platform :android do
+    fastlane_require 'dotenv'
+    before_all do
+        Dotenv.overload '.env.secret'
+        puts "slack_url: #{ENV['SLACK_URL']}"
+    end
+
+  desc "Runs all the tests"
+  lane :test do
+    gradle(task: "test")
+  end
+
+  desc "Submit a new Beta Build to Crashlytics Beta"
+  lane :beta do
+    gradle(task: "clean assembleRelease")
+    crashlytics
+
+    # sh "your_script.sh"
+    # You can also use other beta testing services here
+  end
+
+  lane :slack_build do
+  	  gradle(task: "assembleRelease")
+  	  slack(message: "Build Successful!")
+  	  upload_to_slack()
+  end
+
+  desc "Upload the APK to Slack channel"
+  private_lane :upload_to_slack do |options|
+      file_path = lane_context[SharedValues::GRADLE_APK_OUTPUT_PATH]
+      file_name = file_path.gsub(/\/.*\//,"")
+      token = ENV['SLACK_API_TOKEN']
+      channel = ENV['SLACK_CHANNEL']
+      sh "echo Uploading " + file_name + " to Slack"
+      sh "curl https://slack.com/api/files.upload -F token=\"" + token + "\" -F channels=\"" + channel + "\" -F title=\"" + file_name + "\" -F filename=\"" + file_name + "\" -F file=@" + file_path
+  end
+
+  after_all do |lane|
+      file_name = lane_context[SharedValues::GRADLE_APK_OUTPUT_PATH].gsub(/\/.*\//,"")
+      channel_name = #{ENV['SLACK_CHANNEL']}
+      slack(
+          message: "Successfully deployed new App Update! :bravo:",
+          channel: channel_name,
+          default_payloads: [
+              :git_branch,
+              :last_git_commit_hash,
+              :last_git_commit_message
+          ],
+          payload: {
+              # Optional, lets you specify any number of your own Slack attachments.
+              "Build Date" => Time.new.to_s,
+              "APK" => file_name,
+              "Deployed By" => "Promaster Guru"
+          },
+          success: true
+      )
+  end
+end
