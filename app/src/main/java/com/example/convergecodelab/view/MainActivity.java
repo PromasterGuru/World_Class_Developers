@@ -3,13 +3,17 @@ package com.example.convergecodelab.view;
 import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.support.annotation.VisibleForTesting;
-import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.Snackbar;
 import android.support.test.espresso.IdlingResource;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.SearchView;
+import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 
 import com.example.convergecodelab.R;
@@ -26,11 +30,12 @@ public class MainActivity extends AppCompatActivity implements GithubUsersView, 
 
     ProgressDialog progressDialog;
     GithubAdapter adapter;
+    RecyclerView recyclerView;
     RecyclerView.LayoutManager layoutManager;
-    private final List<String> usernames = new ArrayList<>();
-    private final List<String> imageUrls = new ArrayList<>();
+    private List<String> usernames;
+    private List<String> imageUrls;
     SwipeRefreshLayout swipeRefreshLayout;
-    CoordinatorLayout coordinatorLayout;
+    String query = "location:Nairobi";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +48,8 @@ public class MainActivity extends AppCompatActivity implements GithubUsersView, 
 
     @Override
     public void githubReadyUsers(List<GithubUsers> githubUsers) {
+        usernames = new ArrayList<>();
+        imageUrls = new ArrayList<>();
         for (GithubUsers githubUser: githubUsers) {
             imageUrls.add(githubUser.getProfileImage());
             usernames.add(githubUser.getUserName());
@@ -52,7 +59,7 @@ public class MainActivity extends AppCompatActivity implements GithubUsersView, 
         EspressoIdlingResource.decrement();
     }
     public void initRecyclerView(){
-        RecyclerView recyclerView = findViewById(R.id.recycler_view);
+        recyclerView = findViewById(R.id.recycler_view);
         layoutManager = new GridLayoutManager(this, 2);
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setHasFixedSize(true);
@@ -67,8 +74,8 @@ public class MainActivity extends AppCompatActivity implements GithubUsersView, 
     }
 
     public void loadGithubUsers(){
-        final GithubPresenter presenter = new GithubPresenter(this);
-        presenter.getGithubUsers();
+        GithubPresenter presenter = new GithubPresenter(this);
+        presenter.getGithubUsers(query);
         EspressoIdlingResource.increment();
         progressDialog = new ProgressDialog(this);
         progressDialog.setTitle("Loading Github Users...");
@@ -105,5 +112,33 @@ public class MainActivity extends AppCompatActivity implements GithubUsersView, 
     @VisibleForTesting
     public IdlingResource getCountingIdlingResource() {
         return EspressoIdlingResource.getIdlingResource();
+    }
+
+    //Activate search menu
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.search_menu, menu);
+
+        MenuItem searchItem = menu.findItem(R.id.action_search);
+        SearchView searchView =  (SearchView) searchItem.getActionView();
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String s) {
+                query = s.replaceAll(" ", "+");
+                usernames = new ArrayList<>();
+                imageUrls = new ArrayList<>();
+                loadGithubUsers();
+                progressDialog.cancel();
+                return true;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String s) {
+                return false;
+            }
+        });
+        return true;
     }
 }

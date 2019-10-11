@@ -13,10 +13,13 @@ import android.support.test.espresso.IdlingResource;
 import android.support.v4.view.MenuCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.view.menu.MenuBuilder;
+import android.text.Layout;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.webkit.WebView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.convergecodelab.R;
@@ -35,7 +38,9 @@ import de.hdodenhof.circleimageview.CircleImageView;
 
 public class DetailActivity extends AppCompatActivity implements GithubUserProfileView {
     CircleImageView imgProfile;
+    private WebView mWebview ;
     TextView txtUsername,txtCreate_date,txtOrg,txtFollowers,txtFollowing,txtRepos,txtGists,txtBio;
+    LinearLayout layout;
 
     private String profileUrl;
     private String organization;
@@ -62,6 +67,8 @@ public class DetailActivity extends AppCompatActivity implements GithubUserProfi
         txtRepos = (TextView)findViewById(R.id.userRepositories);
         txtGists = (TextView)findViewById(R.id.userGists);
         txtBio = (TextView)findViewById(R.id.userBioInformation);
+         layout =
+        (LinearLayout)findViewById(R.id.user_details);
         fetchDataHelper();
     }
 
@@ -101,12 +108,26 @@ public class DetailActivity extends AppCompatActivity implements GithubUserProfi
         txtRepos.setText(repos);
         txtGists.setText(gists);
         txtBio.setText(bioInfo);
-
-        txtUsername.setOnClickListener(new View.OnClickListener() {
+        layout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent in = new Intent(Intent.ACTION_VIEW, Uri.parse(profileUrl));
-                startActivity(in);
+            setContentView(R.layout.web_view_layout);
+            mWebview = (WebView)findViewById(R.id.help_webview);
+            mWebview.getSettings().setJavaScriptEnabled(true);
+            mWebview.setWebViewClient(new WebViewController());
+            NetworkUtility networkUtility = new NetworkUtility();
+            if(networkUtility.networkAvailable(getApplicationContext())) {
+                mWebview.loadUrl(profileUrl);
+            }
+            else {
+                Snackbar.make(findViewById(R.id.user_details), "No internet connection", Snackbar.LENGTH_INDEFINITE).setDuration(60000)
+                    .setAction("Retry", new View.OnClickListener() {
+                                @Override
+                                public void onClick(View v) {
+                        profilePresenter.getGithubProfiles(username);
+                        }
+                                                }).show();
+            }
             }
         });
     }

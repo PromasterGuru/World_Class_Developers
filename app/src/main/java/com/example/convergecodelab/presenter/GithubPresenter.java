@@ -27,16 +27,17 @@ public class GithubPresenter {
         }
     }
 
-    public void getGithubUsers(){
+    public void getGithubUsers(String str){
         githubService
                 .getGithubApi()
-                .githubUsersList()
+                .githubUsersList(str)
                 .enqueue(new Callback<GithubUsersResponse>() {
                     @Override
                     public void onResponse(Call<GithubUsersResponse> call, Response<GithubUsersResponse> response) {
                         GithubUsersResponse githubUserResponse = response.body();
                         if(githubUserResponse != null && githubUserResponse.getGithubUsersList() != null) {
-                            List<GithubUsers> result = githubUserResponse.getGithubUsersList();
+                            List<GithubUsers> result =
+                                    githubUserResponse.getGithubUsersList();
                             usersView.githubReadyUsers(result);
                         }
                     }

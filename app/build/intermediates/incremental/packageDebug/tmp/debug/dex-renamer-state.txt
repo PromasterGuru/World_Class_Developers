@@ -1,0 +1,7 @@
+#Fri Oct 11 12:49:58 EAT 2019
+base.0=/Users/paulmathenge/PersonalProjects/World_Class_Developers/app/build/intermediates/dex/debug/mergeProjectDexDebug/out
+path.1=classes.dex
+renamed.1=classes2.dex
+path.0=classes.dex
+renamed.0=classes.dex
+base.1=/Users/paulmathenge/PersonalProjects/World_Class_Developers/app/build/intermediates/dex/debug/mergeExtDexDebug/out

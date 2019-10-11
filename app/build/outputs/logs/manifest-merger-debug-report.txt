@@ -1,0 +1,192 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /Users/paulmathenge/PersonalProjects/World_Class_Developers/app/src/main/AndroidManifest.xml:2:1-27:12
+INJECTED from /Users/paulmathenge/PersonalProjects/World_Class_Developers/app/src/main/AndroidManifest.xml:2:1-27:12
+INJECTED from /Users/paulmathenge/PersonalProjects/World_Class_Developers/app/src/main/AndroidManifest.xml:2:1-27:12
+INJECTED from /Users/paulmathenge/PersonalProjects/World_Class_Developers/app/src/main/AndroidManifest.xml:2:1-27:12
+MERGED from [com.android.support:design:28.0.0] /Users/paulmathenge/.gradle/caches/transforms-1/files-1.1/design-28.0.0.aar/2692c024d13f7b89b6bc6e261f60bef3/AndroidManifest.xml:17:1-24:12
+MERGED from [com.android.support:appcompat-v7:28.0.0] /Users/paulmathenge/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/995a52994f103a76fc9e2333d77b4bbc/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support.constraint:constraint-layout:1.1.3] /Users/paulmathenge/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.1.3.aar/b46aeffdef760c9fe74074e4e9bb0d74/AndroidManifest.xml:2:1-11:12
+MERGED from [com.android.support:recyclerview-v7:28.0.0] /Users/paulmathenge/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-28.0.0.aar/e49a5254e8511c7a4b36ab04e1575f41/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:cardview-v7:28.0.0] /Users/paulmathenge/.gradle/caches/transforms-1/files-1.1/cardview-v7-28.0.0.aar/10592c20b17ee81c63501b1ad7728d34/AndroidManifest.xml:17:1-22:12
+MERGED from [de.hdodenhof:circleimageview:3.0.0] /Users/paulmathenge/.gradle/caches/transforms-1/files-1.1/circleimageview-3.0.0.aar/910486154ca942bf728c017880e63608/AndroidManifest.xml:2:1-11:12
+MERGED from [com.android.support.test.espresso:espresso-idling-resource:3.0.2] /Users/paulmathenge/.gradle/caches/transforms-1/files-1.1/espresso-idling-resource-3.0.2.aar/b79d42370f44ea1b99045e82f508517d/AndroidManifest.xml:17:1-24:12
+MERGED from [com.android.support:support-fragment:28.0.0] /Users/paulmathenge/.gradle/caches/transforms-1/files-1.1/support-fragment-28.0.0.aar/5103fc278a70dedacc930fa7da6ff490/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:animated-vector-drawable:28.0.0] /Users/paulmathenge/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-28.0.0.aar/45831d5fae9b9f258815d043b36ad8b9/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-ui:28.0.0] /Users/paulmathenge/.gradle/caches/transforms-1/files-1.1/support-core-ui-28.0.0.aar/a8fdc20715f374b625f341a034e0cd92/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-utils:28.0.0] /Users/paulmathenge/.gradle/caches/transforms-1/files-1.1/support-core-utils-28.0.0.aar/98853a2043ac2b9dd65ca66bfe5f9290/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-vector-drawable:28.0.0] /Users/paulmathenge/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-28.0.0.aar/2ff9c044a934a0a1690344bb1c59daeb/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:transition:28.0.0] /Users/paulmathenge/.gradle/caches/transforms-1/files-1.1/transition-28.0.0.aar/605d337718ebd4663a9aefff72b9a68f/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:loader:28.0.0] /Users/paulmathenge/.gradle/caches/transforms-1/files-1.1/loader-28.0.0.aar/33c0af540271c63c6a298a6e01247f3f/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:viewpager:28.0.0] /Users/paulmathenge/.gradle/caches/transforms-1/files-1.1/viewpager-28.0.0.aar/a586fb491e72c542cf729c14967bd459/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:coordinatorlayout:28.0.0] /Users/paulmathenge/.gradle/caches/transforms-1/files-1.1/coordinatorlayout-28.0.0.aar/21792ce682e73ae0949d9f10af75e75f/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:drawerlayout:28.0.0] /Users/paulmathenge/.gradle/caches/transforms-1/files-1.1/drawerlayout-28.0.0.aar/34c2d39e770dab062833997fa3740280/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:slidingpanelayout:28.0.0] /Users/paulmathenge/.gradle/caches/transforms-1/files-1.1/slidingpanelayout-28.0.0.aar/27d1ce22709c0090f07be02631ee922d/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:customview:28.0.0] /Users/paulmathenge/.gradle/caches/transforms-1/files-1.1/customview-28.0.0.aar/5a7eae2ec2a0db1246e752ead94a512b/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:swiperefreshlayout:28.0.0] /Users/paulmathenge/.gradle/caches/transforms-1/files-1.1/swiperefreshlayout-28.0.0.aar/c568e6724d5ed5ee1de36ce2e47a73a5/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:asynclayoutinflater:28.0.0] /Users/paulmathenge/.gradle/caches/transforms-1/files-1.1/asynclayoutinflater-28.0.0.aar/3d3d2c62af1cdb8ddc48338207e008a6/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-compat:28.0.0] /Users/paulmathenge/.gradle/caches/transforms-1/files-1.1/support-compat-28.0.0.aar/42e7466cf3a09c0a38254d14f644b5f5/AndroidManifest.xml:17:1-24:12
+MERGED from [com.android.support:versionedparcelable:28.0.0] /Users/paulmathenge/.gradle/caches/transforms-1/files-1.1/versionedparcelable-28.0.0.aar/188b2b0ddf2129bafeb5c5abf3de0ed4/AndroidManifest.xml:17:1-25:12
+MERGED from [com.android.support:cursoradapter:28.0.0] /Users/paulmathenge/.gradle/caches/transforms-1/files-1.1/cursoradapter-28.0.0.aar/320e8a7860fa98f89e4502f47ea80036/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:runtime:1.1.1] /Users/paulmathenge/.gradle/caches/transforms-1/files-1.1/runtime-1.1.1.aar/d75aceb6013788f8b5b8e3e798f57639/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:documentfile:28.0.0] /Users/paulmathenge/.gradle/caches/transforms-1/files-1.1/documentfile-28.0.0.aar/64260eac36381c8e72385bced8fbdc07/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:localbroadcastmanager:28.0.0] /Users/paulmathenge/.gradle/caches/transforms-1/files-1.1/localbroadcastmanager-28.0.0.aar/8084ab30c419dbf0b99f3876c5821739/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:print:28.0.0] /Users/paulmathenge/.gradle/caches/transforms-1/files-1.1/print-28.0.0.aar/b8858608f029c9ba88f54b4bb71447a0/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:viewmodel:1.1.1] /Users/paulmathenge/.gradle/caches/transforms-1/files-1.1/viewmodel-1.1.1.aar/9d2bd2eba3f83f6a83e92b093acaf67b/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:interpolator:28.0.0] /Users/paulmathenge/.gradle/caches/transforms-1/files-1.1/interpolator-28.0.0.aar/aec2d6df07627d2cb30683712971a3a8/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:livedata:1.1.1] /Users/paulmathenge/.gradle/caches/transforms-1/files-1.1/livedata-1.1.1.aar/09d253d79e2d1e600fcda545b7a3e99f/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:livedata-core:1.1.1] /Users/paulmathenge/.gradle/caches/transforms-1/files-1.1/livedata-core-1.1.1.aar/a9a07bea46155f2bfafb9dcf5e505a71/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.core:runtime:1.1.1] /Users/paulmathenge/.gradle/caches/transforms-1/files-1.1/runtime-1.1.1.aar/a341d8dcb98f0afe116e11cda237c78d/AndroidManifest.xml:17:1-22:12
+INJECTED from /Users/paulmathenge/PersonalProjects/World_Class_Developers/app/src/main/AndroidManifest.xml:2:1-27:12
+INJECTED from /Users/paulmathenge/PersonalProjects/World_Class_Developers/app/src/main/AndroidManifest.xml:2:1-27:12
+INJECTED from /Users/paulmathenge/PersonalProjects/World_Class_Developers/app/src/main/AndroidManifest.xml:2:1-27:12
+	package
+		ADDED from /Users/paulmathenge/PersonalProjects/World_Class_Developers/app/src/main/AndroidManifest.xml:3:5-42
+		INJECTED from /Users/paulmathenge/PersonalProjects/World_Class_Developers/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/paulmathenge/PersonalProjects/World_Class_Developers/app/src/main/AndroidManifest.xml
+	android:versionName
+		INJECTED from /Users/paulmathenge/PersonalProjects/World_Class_Developers/app/src/main/AndroidManifest.xml
+		ADDED from /Users/paulmathenge/PersonalProjects/World_Class_Developers/app/src/main/AndroidManifest.xml:2:1-27:12
+		INJECTED from /Users/paulmathenge/PersonalProjects/World_Class_Developers/app/src/main/AndroidManifest.xml
+	android:versionCode
+		INJECTED from /Users/paulmathenge/PersonalProjects/World_Class_Developers/app/src/main/AndroidManifest.xml
+		ADDED from /Users/paulmathenge/PersonalProjects/World_Class_Developers/app/src/main/AndroidManifest.xml:2:1-27:12
+		INJECTED from /Users/paulmathenge/PersonalProjects/World_Class_Developers/app/src/main/AndroidManifest.xml
+	xmlns:android
+		ADDED from /Users/paulmathenge/PersonalProjects/World_Class_Developers/app/src/main/AndroidManifest.xml:2:11-69
+uses-permission#android.permission.INTERNET
+ADDED from /Users/paulmathenge/PersonalProjects/World_Class_Developers/app/src/main/AndroidManifest.xml:4:5-67
+	android:name
+		ADDED from /Users/paulmathenge/PersonalProjects/World_Class_Developers/app/src/main/AndroidManifest.xml:4:22-64
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from /Users/paulmathenge/PersonalProjects/World_Class_Developers/app/src/main/AndroidManifest.xml:5:5-78
+	android:name
+		ADDED from /Users/paulmathenge/PersonalProjects/World_Class_Developers/app/src/main/AndroidManifest.xml:5:22-76
+application
+ADDED from /Users/paulmathenge/PersonalProjects/World_Class_Developers/app/src/main/AndroidManifest.xml:6:5-25:19
+MERGED from [com.android.support:design:28.0.0] /Users/paulmathenge/.gradle/caches/transforms-1/files-1.1/design-28.0.0.aar/2692c024d13f7b89b6bc6e261f60bef3/AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:design:28.0.0] /Users/paulmathenge/.gradle/caches/transforms-1/files-1.1/design-28.0.0.aar/2692c024d13f7b89b6bc6e261f60bef3/AndroidManifest.xml:22:5-20
+MERGED from [com.android.support.constraint:constraint-layout:1.1.3] /Users/paulmathenge/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.1.3.aar/b46aeffdef760c9fe74074e4e9bb0d74/AndroidManifest.xml:9:5-20
+MERGED from [com.android.support.constraint:constraint-layout:1.1.3] /Users/paulmathenge/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.1.3.aar/b46aeffdef760c9fe74074e4e9bb0d74/AndroidManifest.xml:9:5-20
+MERGED from [de.hdodenhof:circleimageview:3.0.0] /Users/paulmathenge/.gradle/caches/transforms-1/files-1.1/circleimageview-3.0.0.aar/910486154ca942bf728c017880e63608/AndroidManifest.xml:9:5-20
+MERGED from [de.hdodenhof:circleimageview:3.0.0] /Users/paulmathenge/.gradle/caches/transforms-1/files-1.1/circleimageview-3.0.0.aar/910486154ca942bf728c017880e63608/AndroidManifest.xml:9:5-20
+MERGED from [com.android.support:support-compat:28.0.0] /Users/paulmathenge/.gradle/caches/transforms-1/files-1.1/support-compat-28.0.0.aar/42e7466cf3a09c0a38254d14f644b5f5/AndroidManifest.xml:22:5-94
+MERGED from [com.android.support:support-compat:28.0.0] /Users/paulmathenge/.gradle/caches/transforms-1/files-1.1/support-compat-28.0.0.aar/42e7466cf3a09c0a38254d14f644b5f5/AndroidManifest.xml:22:5-94
+MERGED from [com.android.support:versionedparcelable:28.0.0] /Users/paulmathenge/.gradle/caches/transforms-1/files-1.1/versionedparcelable-28.0.0.aar/188b2b0ddf2129bafeb5c5abf3de0ed4/AndroidManifest.xml:22:5-23:19
+MERGED from [com.android.support:versionedparcelable:28.0.0] /Users/paulmathenge/.gradle/caches/transforms-1/files-1.1/versionedparcelable-28.0.0.aar/188b2b0ddf2129bafeb5c5abf3de0ed4/AndroidManifest.xml:22:5-23:19
+	android:appComponentFactory
+		ADDED from [com.android.support:support-compat:28.0.0] /Users/paulmathenge/.gradle/caches/transforms-1/files-1.1/support-compat-28.0.0.aar/42e7466cf3a09c0a38254d14f644b5f5/AndroidManifest.xml:22:18-91
+	android:supportsRtl
+		ADDED from /Users/paulmathenge/PersonalProjects/World_Class_Developers/app/src/main/AndroidManifest.xml:11:9-35
+	android:label
+		ADDED from /Users/paulmathenge/PersonalProjects/World_Class_Developers/app/src/main/AndroidManifest.xml:9:9-41
+	android:roundIcon
+		ADDED from /Users/paulmathenge/PersonalProjects/World_Class_Developers/app/src/main/AndroidManifest.xml:10:9-54
+	android:icon
+		ADDED from /Users/paulmathenge/PersonalProjects/World_Class_Developers/app/src/main/AndroidManifest.xml:8:9-43
+	android:allowBackup
+		ADDED from /Users/paulmathenge/PersonalProjects/World_Class_Developers/app/src/main/AndroidManifest.xml:7:9-35
+	android:theme
+		ADDED from /Users/paulmathenge/PersonalProjects/World_Class_Developers/app/src/main/AndroidManifest.xml:12:9-40
+activity#com.example.convergecodelab.view.DetailActivity
+ADDED from /Users/paulmathenge/PersonalProjects/World_Class_Developers/app/src/main/AndroidManifest.xml:13:9-16:20
+	android:parentActivityName
+		ADDED from /Users/paulmathenge/PersonalProjects/World_Class_Developers/app/src/main/AndroidManifest.xml:14:13-60
+	android:name
+		ADDED from /Users/paulmathenge/PersonalProjects/World_Class_Developers/app/src/main/AndroidManifest.xml:13:19-54
+activity#com.example.convergecodelab.view.MainActivity
+ADDED from /Users/paulmathenge/PersonalProjects/World_Class_Developers/app/src/main/AndroidManifest.xml:17:9-24:20
+	android:configChanges
+		ADDED from /Users/paulmathenge/PersonalProjects/World_Class_Developers/app/src/main/AndroidManifest.xml:18:13-74
+	android:name
+		ADDED from /Users/paulmathenge/PersonalProjects/World_Class_Developers/app/src/main/AndroidManifest.xml:17:19-52
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from /Users/paulmathenge/PersonalProjects/World_Class_Developers/app/src/main/AndroidManifest.xml:19:13-23:29
+action#android.intent.action.MAIN
+ADDED from /Users/paulmathenge/PersonalProjects/World_Class_Developers/app/src/main/AndroidManifest.xml:20:17-69
+	android:name
+		ADDED from /Users/paulmathenge/PersonalProjects/World_Class_Developers/app/src/main/AndroidManifest.xml:20:25-66
+category#android.intent.category.LAUNCHER
+ADDED from /Users/paulmathenge/PersonalProjects/World_Class_Developers/app/src/main/AndroidManifest.xml:22:17-77
+	android:name
+		ADDED from /Users/paulmathenge/PersonalProjects/World_Class_Developers/app/src/main/AndroidManifest.xml:22:27-74
+uses-sdk
+INJECTED from /Users/paulmathenge/PersonalProjects/World_Class_Developers/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /Users/paulmathenge/PersonalProjects/World_Class_Developers/app/src/main/AndroidManifest.xml
+INJECTED from /Users/paulmathenge/PersonalProjects/World_Class_Developers/app/src/main/AndroidManifest.xml
+MERGED from [com.android.support:design:28.0.0] /Users/paulmathenge/.gradle/caches/transforms-1/files-1.1/design-28.0.0.aar/2692c024d13f7b89b6bc6e261f60bef3/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:design:28.0.0] /Users/paulmathenge/.gradle/caches/transforms-1/files-1.1/design-28.0.0.aar/2692c024d13f7b89b6bc6e261f60bef3/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:appcompat-v7:28.0.0] /Users/paulmathenge/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/995a52994f103a76fc9e2333d77b4bbc/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:appcompat-v7:28.0.0] /Users/paulmathenge/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/995a52994f103a76fc9e2333d77b4bbc/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support.constraint:constraint-layout:1.1.3] /Users/paulmathenge/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.1.3.aar/b46aeffdef760c9fe74074e4e9bb0d74/AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support.constraint:constraint-layout:1.1.3] /Users/paulmathenge/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.1.3.aar/b46aeffdef760c9fe74074e4e9bb0d74/AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support:recyclerview-v7:28.0.0] /Users/paulmathenge/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-28.0.0.aar/e49a5254e8511c7a4b36ab04e1575f41/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:recyclerview-v7:28.0.0] /Users/paulmathenge/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-28.0.0.aar/e49a5254e8511c7a4b36ab04e1575f41/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cardview-v7:28.0.0] /Users/paulmathenge/.gradle/caches/transforms-1/files-1.1/cardview-v7-28.0.0.aar/10592c20b17ee81c63501b1ad7728d34/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cardview-v7:28.0.0] /Users/paulmathenge/.gradle/caches/transforms-1/files-1.1/cardview-v7-28.0.0.aar/10592c20b17ee81c63501b1ad7728d34/AndroidManifest.xml:20:5-44
+MERGED from [de.hdodenhof:circleimageview:3.0.0] /Users/paulmathenge/.gradle/caches/transforms-1/files-1.1/circleimageview-3.0.0.aar/910486154ca942bf728c017880e63608/AndroidManifest.xml:5:5-7:41
+MERGED from [de.hdodenhof:circleimageview:3.0.0] /Users/paulmathenge/.gradle/caches/transforms-1/files-1.1/circleimageview-3.0.0.aar/910486154ca942bf728c017880e63608/AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support.test.espresso:espresso-idling-resource:3.0.2] /Users/paulmathenge/.gradle/caches/transforms-1/files-1.1/espresso-idling-resource-3.0.2.aar/b79d42370f44ea1b99045e82f508517d/AndroidManifest.xml:20:5-22:41
+MERGED from [com.android.support.test.espresso:espresso-idling-resource:3.0.2] /Users/paulmathenge/.gradle/caches/transforms-1/files-1.1/espresso-idling-resource-3.0.2.aar/b79d42370f44ea1b99045e82f508517d/AndroidManifest.xml:20:5-22:41
+MERGED from [com.android.support:support-fragment:28.0.0] /Users/paulmathenge/.gradle/caches/transforms-1/files-1.1/support-fragment-28.0.0.aar/5103fc278a70dedacc930fa7da6ff490/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:28.0.0] /Users/paulmathenge/.gradle/caches/transforms-1/files-1.1/support-fragment-28.0.0.aar/5103fc278a70dedacc930fa7da6ff490/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:28.0.0] /Users/paulmathenge/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-28.0.0.aar/45831d5fae9b9f258815d043b36ad8b9/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:28.0.0] /Users/paulmathenge/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-28.0.0.aar/45831d5fae9b9f258815d043b36ad8b9/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:28.0.0] /Users/paulmathenge/.gradle/caches/transforms-1/files-1.1/support-core-ui-28.0.0.aar/a8fdc20715f374b625f341a034e0cd92/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:28.0.0] /Users/paulmathenge/.gradle/caches/transforms-1/files-1.1/support-core-ui-28.0.0.aar/a8fdc20715f374b625f341a034e0cd92/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:28.0.0] /Users/paulmathenge/.gradle/caches/transforms-1/files-1.1/support-core-utils-28.0.0.aar/98853a2043ac2b9dd65ca66bfe5f9290/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:28.0.0] /Users/paulmathenge/.gradle/caches/transforms-1/files-1.1/support-core-utils-28.0.0.aar/98853a2043ac2b9dd65ca66bfe5f9290/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:28.0.0] /Users/paulmathenge/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-28.0.0.aar/2ff9c044a934a0a1690344bb1c59daeb/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:28.0.0] /Users/paulmathenge/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-28.0.0.aar/2ff9c044a934a0a1690344bb1c59daeb/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:transition:28.0.0] /Users/paulmathenge/.gradle/caches/transforms-1/files-1.1/transition-28.0.0.aar/605d337718ebd4663a9aefff72b9a68f/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:transition:28.0.0] /Users/paulmathenge/.gradle/caches/transforms-1/files-1.1/transition-28.0.0.aar/605d337718ebd4663a9aefff72b9a68f/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:loader:28.0.0] /Users/paulmathenge/.gradle/caches/transforms-1/files-1.1/loader-28.0.0.aar/33c0af540271c63c6a298a6e01247f3f/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:loader:28.0.0] /Users/paulmathenge/.gradle/caches/transforms-1/files-1.1/loader-28.0.0.aar/33c0af540271c63c6a298a6e01247f3f/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:viewpager:28.0.0] /Users/paulmathenge/.gradle/caches/transforms-1/files-1.1/viewpager-28.0.0.aar/a586fb491e72c542cf729c14967bd459/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:viewpager:28.0.0] /Users/paulmathenge/.gradle/caches/transforms-1/files-1.1/viewpager-28.0.0.aar/a586fb491e72c542cf729c14967bd459/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:coordinatorlayout:28.0.0] /Users/paulmathenge/.gradle/caches/transforms-1/files-1.1/coordinatorlayout-28.0.0.aar/21792ce682e73ae0949d9f10af75e75f/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:coordinatorlayout:28.0.0] /Users/paulmathenge/.gradle/caches/transforms-1/files-1.1/coordinatorlayout-28.0.0.aar/21792ce682e73ae0949d9f10af75e75f/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:drawerlayout:28.0.0] /Users/paulmathenge/.gradle/caches/transforms-1/files-1.1/drawerlayout-28.0.0.aar/34c2d39e770dab062833997fa3740280/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:drawerlayout:28.0.0] /Users/paulmathenge/.gradle/caches/transforms-1/files-1.1/drawerlayout-28.0.0.aar/34c2d39e770dab062833997fa3740280/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:slidingpanelayout:28.0.0] /Users/paulmathenge/.gradle/caches/transforms-1/files-1.1/slidingpanelayout-28.0.0.aar/27d1ce22709c0090f07be02631ee922d/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:slidingpanelayout:28.0.0] /Users/paulmathenge/.gradle/caches/transforms-1/files-1.1/slidingpanelayout-28.0.0.aar/27d1ce22709c0090f07be02631ee922d/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:customview:28.0.0] /Users/paulmathenge/.gradle/caches/transforms-1/files-1.1/customview-28.0.0.aar/5a7eae2ec2a0db1246e752ead94a512b/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:customview:28.0.0] /Users/paulmathenge/.gradle/caches/transforms-1/files-1.1/customview-28.0.0.aar/5a7eae2ec2a0db1246e752ead94a512b/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:swiperefreshlayout:28.0.0] /Users/paulmathenge/.gradle/caches/transforms-1/files-1.1/swiperefreshlayout-28.0.0.aar/c568e6724d5ed5ee1de36ce2e47a73a5/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:swiperefreshlayout:28.0.0] /Users/paulmathenge/.gradle/caches/transforms-1/files-1.1/swiperefreshlayout-28.0.0.aar/c568e6724d5ed5ee1de36ce2e47a73a5/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:asynclayoutinflater:28.0.0] /Users/paulmathenge/.gradle/caches/transforms-1/files-1.1/asynclayoutinflater-28.0.0.aar/3d3d2c62af1cdb8ddc48338207e008a6/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:asynclayoutinflater:28.0.0] /Users/paulmathenge/.gradle/caches/transforms-1/files-1.1/asynclayoutinflater-28.0.0.aar/3d3d2c62af1cdb8ddc48338207e008a6/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:28.0.0] /Users/paulmathenge/.gradle/caches/transforms-1/files-1.1/support-compat-28.0.0.aar/42e7466cf3a09c0a38254d14f644b5f5/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:28.0.0] /Users/paulmathenge/.gradle/caches/transforms-1/files-1.1/support-compat-28.0.0.aar/42e7466cf3a09c0a38254d14f644b5f5/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:versionedparcelable:28.0.0] /Users/paulmathenge/.gradle/caches/transforms-1/files-1.1/versionedparcelable-28.0.0.aar/188b2b0ddf2129bafeb5c5abf3de0ed4/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:versionedparcelable:28.0.0] /Users/paulmathenge/.gradle/caches/transforms-1/files-1.1/versionedparcelable-28.0.0.aar/188b2b0ddf2129bafeb5c5abf3de0ed4/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cursoradapter:28.0.0] /Users/paulmathenge/.gradle/caches/transforms-1/files-1.1/cursoradapter-28.0.0.aar/320e8a7860fa98f89e4502f47ea80036/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cursoradapter:28.0.0] /Users/paulmathenge/.gradle/caches/transforms-1/files-1.1/cursoradapter-28.0.0.aar/320e8a7860fa98f89e4502f47ea80036/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.1] /Users/paulmathenge/.gradle/caches/transforms-1/files-1.1/runtime-1.1.1.aar/d75aceb6013788f8b5b8e3e798f57639/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.1] /Users/paulmathenge/.gradle/caches/transforms-1/files-1.1/runtime-1.1.1.aar/d75aceb6013788f8b5b8e3e798f57639/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:documentfile:28.0.0] /Users/paulmathenge/.gradle/caches/transforms-1/files-1.1/documentfile-28.0.0.aar/64260eac36381c8e72385bced8fbdc07/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:documentfile:28.0.0] /Users/paulmathenge/.gradle/caches/transforms-1/files-1.1/documentfile-28.0.0.aar/64260eac36381c8e72385bced8fbdc07/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:localbroadcastmanager:28.0.0] /Users/paulmathenge/.gradle/caches/transforms-1/files-1.1/localbroadcastmanager-28.0.0.aar/8084ab30c419dbf0b99f3876c5821739/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:localbroadcastmanager:28.0.0] /Users/paulmathenge/.gradle/caches/transforms-1/files-1.1/localbroadcastmanager-28.0.0.aar/8084ab30c419dbf0b99f3876c5821739/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:print:28.0.0] /Users/paulmathenge/.gradle/caches/transforms-1/files-1.1/print-28.0.0.aar/b8858608f029c9ba88f54b4bb71447a0/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:print:28.0.0] /Users/paulmathenge/.gradle/caches/transforms-1/files-1.1/print-28.0.0.aar/b8858608f029c9ba88f54b4bb71447a0/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.1] /Users/paulmathenge/.gradle/caches/transforms-1/files-1.1/viewmodel-1.1.1.aar/9d2bd2eba3f83f6a83e92b093acaf67b/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.1] /Users/paulmathenge/.gradle/caches/transforms-1/files-1.1/viewmodel-1.1.1.aar/9d2bd2eba3f83f6a83e92b093acaf67b/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:interpolator:28.0.0] /Users/paulmathenge/.gradle/caches/transforms-1/files-1.1/interpolator-28.0.0.aar/aec2d6df07627d2cb30683712971a3a8/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:interpolator:28.0.0] /Users/paulmathenge/.gradle/caches/transforms-1/files-1.1/interpolator-28.0.0.aar/aec2d6df07627d2cb30683712971a3a8/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata:1.1.1] /Users/paulmathenge/.gradle/caches/transforms-1/files-1.1/livedata-1.1.1.aar/09d253d79e2d1e600fcda545b7a3e99f/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata:1.1.1] /Users/paulmathenge/.gradle/caches/transforms-1/files-1.1/livedata-1.1.1.aar/09d253d79e2d1e600fcda545b7a3e99f/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.1] /Users/paulmathenge/.gradle/caches/transforms-1/files-1.1/livedata-core-1.1.1.aar/a9a07bea46155f2bfafb9dcf5e505a71/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.1] /Users/paulmathenge/.gradle/caches/transforms-1/files-1.1/livedata-core-1.1.1.aar/a9a07bea46155f2bfafb9dcf5e505a71/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.1] /Users/paulmathenge/.gradle/caches/transforms-1/files-1.1/runtime-1.1.1.aar/a341d8dcb98f0afe116e11cda237c78d/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.1] /Users/paulmathenge/.gradle/caches/transforms-1/files-1.1/runtime-1.1.1.aar/a341d8dcb98f0afe116e11cda237c78d/AndroidManifest.xml:20:5-44
+INJECTED from /Users/paulmathenge/PersonalProjects/World_Class_Developers/app/src/main/AndroidManifest.xml
+INJECTED from /Users/paulmathenge/PersonalProjects/World_Class_Developers/app/src/main/AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from /Users/paulmathenge/PersonalProjects/World_Class_Developers/app/src/main/AndroidManifest.xml
+		ADDED from /Users/paulmathenge/PersonalProjects/World_Class_Developers/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/paulmathenge/PersonalProjects/World_Class_Developers/app/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /Users/paulmathenge/PersonalProjects/World_Class_Developers/app/src/main/AndroidManifest.xml
+		ADDED from /Users/paulmathenge/PersonalProjects/World_Class_Developers/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/paulmathenge/PersonalProjects/World_Class_Developers/app/src/main/AndroidManifest.xml
