@@ -16,4 +16,3 @@ public interface GithubApi {
     @GET("users/{username}?client_id=4effd507d4ee3cec32e8&client_secret=a3c8c2f30c491aa5f00c27aa6f29a61508694f8a")
     Call<GithubUserProfile> getUserProfile(@Path("username") String username);
 }
-

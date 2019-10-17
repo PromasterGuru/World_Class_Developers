@@ -1,7 +1,12 @@
 package com.example.convergecodelab.presenter;
 
+import android.support.design.widget.Snackbar;
+import android.text.Layout;
 import android.util.Log;
+import android.view.View;
+import android.widget.Toast;
 
+import com.example.convergecodelab.R;
 import com.example.convergecodelab.model.GithubUsers;
 import com.example.convergecodelab.model.GithubUsersResponse;
 import com.example.convergecodelab.service.GithubService;
@@ -27,7 +32,7 @@ public class GithubPresenter {
         }
     }
 
-    public void getGithubUsers(String str){
+    public void getGithubUsers(final String str){
         githubService
                 .getGithubApi()
                 .githubUsersList(str)
@@ -35,11 +40,9 @@ public class GithubPresenter {
                     @Override
                     public void onResponse(Call<GithubUsersResponse> call, Response<GithubUsersResponse> response) {
                         GithubUsersResponse githubUserResponse = response.body();
-                        if(githubUserResponse != null && githubUserResponse.getGithubUsersList() != null) {
-                            List<GithubUsers> result =
-                                    githubUserResponse.getGithubUsersList();
-                            usersView.githubReadyUsers(result);
-                        }
+                        List<GithubUsers> result =
+                                githubUserResponse.getGithubUsersList();
+                        usersView.githubReadyUsers(result);
                     }
 
                     @Override

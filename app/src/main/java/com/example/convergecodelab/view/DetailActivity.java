@@ -157,11 +157,28 @@ public class DetailActivity extends AppCompatActivity implements GithubUserProfi
         String text = "Check out this awesome developer @" + username + ", " +profileUrl +".";
         shareIntent.setType("text/plain");
         shareIntent.putExtra(Intent.EXTRA_TEXT, text);
-        startActivity(Intent.createChooser(shareIntent, "Share with"));
+        startActivity(Intent.createChooser(shareIntent,
+                getString(R.string.share)));
     }
+
     public void closeApplication(){
         finish();
         moveTaskToBack(true);
+    }
+
+    public void callDeveloper(){
+        String tel = "tel:" + getString(R.string.phone_number);
+        Intent callIntent = new Intent(Intent.ACTION_DIAL);
+        callIntent.setData(Uri.parse(tel));
+        startActivity(callIntent);
+    }
+
+    public void emailDeveloper(){
+        String email = "mailto:" + getString(R.string.email_address);
+        Intent emailIntent = new Intent(Intent.ACTION_SENDTO,
+                Uri.parse(email));
+        startActivity(Intent.createChooser(emailIntent,
+                getString(R.string.email_chooser)));
     }
 
     @Override
@@ -169,6 +186,14 @@ public class DetailActivity extends AppCompatActivity implements GithubUserProfi
         switch (item.getItemId()){
             case R.id.shareProfile:
                 shareProfile();
+                break;
+
+            case R.id.call_us:
+                callDeveloper();
+                break;
+
+            case R.id.email_us:
+                emailDeveloper();
                 break;
 
             case R.id.logout:

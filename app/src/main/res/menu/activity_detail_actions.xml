@@ -1,18 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    >
+    xmlns:app="http://schemas.android.com/apk/res-auto">
     <group android:id="@+id/groupShare">
         <item
             android:id="@+id/shareProfile"
-            android:icon="@drawable/share"
+            android:icon="@drawable/ic_share"
             android:title="@string/share"
+            app:showAsAction="never"/>
+    </group>
+    <group android:id="@+id/groupDev">
+        <item
+            android:id="@+id/feedback"
+            android:enabled="false"
+            android:title="@string/feedback"
+            app:showAsAction="never"/>
+
+        <item
+            android:id="@+id/call_us"
+            android:title="@string/call"
+            android:icon="@drawable/ic_call"
+            app:showAsAction="never"/>
+
+        <item
+            android:id="@+id/email_us"
+            android:title="@string/email"
+            android:icon="@drawable/ic_email"
             app:showAsAction="never"/>
     </group>
     <group android:id="@+id/groupExit">
         <item
             android:id="@+id/logout"
-            android:icon="@drawable/quit"
+            android:icon="@drawable/ic_exit"
             android:title="@string/logout"
             app:showAsAction="never"/>
     </group>
