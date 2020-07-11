@@ -18,7 +18,7 @@ android.testOptions {
 android {
     compileSdkVersion 28
     defaultConfig {
-        applicationId "com.example.convergecodelab"
+        applicationId "com.topnotch.developers"
         minSdkVersion 19
         targetSdkVersion 28
         versionCode 1
@@ -64,7 +64,7 @@ dependencies {
     implementation "com.squareup.retrofit2:retrofit:$rootProject.ext.retrofitVersion"
     implementation "com.squareup.retrofit2:converter-gson:$rootProject.ext.retrofitVersion"
     implementation "com.android.support:design:$rootProject.ext.supportLibraryVersion"
-    implementation "com.squareup.picasso:picasso:$rootProject.ext.retrofitVersion"
+    implementation "com.squareup.picasso:picasso:$rootProject.ext.picassoVersion"
     implementation "com.android.support.test.espresso:espresso-idling-resource:$rootProject.ext.espressoVersion"
 
     //Test dependencies

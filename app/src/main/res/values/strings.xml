@@ -1,9 +1,9 @@
 <resources>
-    <string name="app_name">World Class Developers</string>
+    <string name="app_name">Top Developers</string>
     <string name="img_description">Profile Picture</string>
     <string name="img_organization">Organization image</string>
     <string name="profile_name">Profile</string>
-    <string name="txtProfile">Developer Github Profile</string>
+    <string name="txtProfile">Developer Profile</string>
     <string name="txtFollowers">Followers</string>
     <string name="txtFollowing">Following</string>
     <string name="txtRepos">Repositories</string>
@@ -14,7 +14,7 @@
     <string name="email">Email Us</string>
     <string name="donate">Donate</string>
     <string name="share">Share profile</string>
-    <string name="phone_number">0700456439</string>
+    <string name="phone_number">+254700456439</string>
     <string name="email_address">pmutondo12@gmail.com</string>
     <string name="email_chooser">Send With</string>
     <string name="logout">Logout</string>

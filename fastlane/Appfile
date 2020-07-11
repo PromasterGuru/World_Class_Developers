@@ -1,2 +1,2 @@
 json_key_file("") # Path to the json secret file - Follow https://docs.fastlane.tools/actions/supply/#setup to get one
-package_name("com.example.convergecodelab") # e.g. com.krausefx.app
+package_name("topnotch.convergecodelab") # e.g. com.krausefx.app
