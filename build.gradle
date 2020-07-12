@@ -1,10 +1,14 @@
 buildscript {
+    ext.kotlin_version = '1.3.72'
     repositories {
         google()
         jcenter()
+
+        mavenCentral()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.3.2'
+        classpath 'com.android.tools.build:gradle:4.0.0'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
     }
@@ -19,17 +23,26 @@ task clean(type: Delete) {
     delete rootProject.buildDir
 }
 ext {
+    appCompatVersion = '1.1.0'
     supportLibraryVersion = '28.0.0'
     constraintLayoutVersion = '1.1.3'
     junitVersion = '4.13'
+    junitTestVersion = '1.1.1'
     testRunnerVersion = '1.0.2'
     espressoVersion = '3.0.2'
-    espressoIdlingResourceVersion = '3.1.0'
+    espressoIdlingResourceVersion = '3.2.0'
+    espressoCoreVersion = '3.2.0'
     circleImageViewVersion = '3.1.0'
     gsonVersion = '2.8.5'
-    retrofitVersion = '2.6.2'
+    retrofitVersion = '2.9.0'
     adroidxTestCoreVersion = '1.2.0'
     mockitoCoreVersion = '2.19.0'
     jacocoVersion = '0.8.1'
     picassoVersion = '2.71828'
+    recyclerViewVersion = '1.1.0'
+    cardViewVersion = '1.0.0'
+    gsonVersion = '2.8.6'
+    materialDesignVersion = '1.1.0'
+    sweetAlertDialogVersion = '1.6.2'
+    androidTestRuleVersion = '1.2.0'
 }

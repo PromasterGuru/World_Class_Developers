@@ -1,18 +1,10 @@
 package com.topnotch.developers.view;
 
 import android.annotation.SuppressLint;
-import android.app.ProgressDialog;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.annotation.RequiresApi;
-import android.support.annotation.VisibleForTesting;
-import android.support.design.widget.Snackbar;
-import android.support.test.espresso.IdlingResource;
-import android.support.v4.view.MenuCompat;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.view.menu.MenuBuilder;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -20,6 +12,13 @@ import android.view.View;
 import android.webkit.WebView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import androidx.annotation.RequiresApi;
+import androidx.annotation.VisibleForTesting;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.view.menu.MenuBuilder;
+import androidx.core.view.MenuCompat;
+import androidx.test.espresso.IdlingResource;
 
 import com.squareup.picasso.Picasso;
 import com.topnotch.developers.R;
@@ -33,14 +32,14 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
 
+import cn.pedant.SweetAlert.SweetAlertDialog;
 import de.hdodenhof.circleimageview.CircleImageView;
 
 public class DetailActivity extends AppCompatActivity implements GithubUserProfileView {
     CircleImageView imgProfile;
-    private WebView mWebview ;
-    TextView txtUsername,txtCreate_date,txtOrg,txtFollowers,txtFollowing,txtRepos,txtGists,txtBio;
+    private WebView mWebview;
+    TextView txtUsername, txtCreate_date, txtOrg, txtFollowers, txtFollowing, txtRepos, txtGists, txtBio;
     LinearLayout layout;
-
     private String profileUrl;
     private String organization;
     private String joinDate;
@@ -50,24 +49,24 @@ public class DetailActivity extends AppCompatActivity implements GithubUserProfi
     private String bioInfo;
     private String gists;
     private String username;
-    ProgressDialog progressDialog;
-    GithubProfilePresenter profilePresenter;
+    private SweetAlertDialog dialog;
+    private GithubProfilePresenter profilePresenter;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail);
         imgProfile = (CircleImageView) findViewById(R.id.userProfile);
-        txtUsername = (TextView)findViewById(R.id.userName);
-        txtCreate_date = (TextView)findViewById(R.id.userCreate_date);
-        txtOrg = (TextView)findViewById(R.id.userOrgs);
-        txtFollowers = (TextView)findViewById(R.id.userFollowers);
-        txtFollowing = (TextView)findViewById(R.id.userFollowing);
-        txtRepos = (TextView)findViewById(R.id.userRepositories);
-        txtGists = (TextView)findViewById(R.id.userGists);
-        txtBio = (TextView)findViewById(R.id.userBioInformation);
-         layout =
-        (LinearLayout)findViewById(R.id.user_details);
+        txtUsername = (TextView) findViewById(R.id.userName);
+        txtCreate_date = (TextView) findViewById(R.id.userCreate_date);
+        txtOrg = (TextView) findViewById(R.id.userOrgs);
+        txtFollowers = (TextView) findViewById(R.id.userFollowers);
+        txtFollowing = (TextView) findViewById(R.id.userFollowing);
+        txtRepos = (TextView) findViewById(R.id.userRepositories);
+        txtGists = (TextView) findViewById(R.id.userGists);
+        txtBio = (TextView) findViewById(R.id.userBioInformation);
+        layout = (LinearLayout) findViewById(R.id.user_details);
         fetchDataHelper();
     }
 
@@ -82,21 +81,20 @@ public class DetailActivity extends AppCompatActivity implements GithubUserProfi
         this.bioInfo = githubUser.getBio();
         this.gists = githubUser.getGists();
         getProfiles();
-        progressDialog.dismiss();
         EspressoIdlingResource.decrement();
     }
 
     @RequiresApi(api = Build.VERSION_CODES.N)
-    public void getProfiles(){
+    public void getProfiles() {
         try {
             joinDate = dateConverter();
         } catch (ParseException e) {
             Log.d("Error", "An error occurred " + e.getMessage());
         }
-        if(this.organization == null){
+        if (this.organization == null) {
             this.organization = "User has no organization";
         }
-        if(this.bioInfo == null){
+        if (this.bioInfo == null) {
             this.bioInfo = "User has no bio";
         }
         String date = "Joined on " + joinDate;
@@ -107,26 +105,15 @@ public class DetailActivity extends AppCompatActivity implements GithubUserProfi
         txtRepos.setText(repos);
         txtGists.setText(gists);
         txtBio.setText(bioInfo);
-        layout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+        layout.setOnClickListener((View.OnClickListener) v -> {
             setContentView(R.layout.web_view_layout);
-            mWebview = (WebView)findViewById(R.id.help_webview);
-            mWebview.getSettings().setJavaScriptEnabled(true);
+            mWebview = (WebView) findViewById(R.id.help_webview);
             mWebview.setWebViewClient(new WebViewController());
             NetworkUtility networkUtility = new NetworkUtility();
-            if(networkUtility.networkAvailable(getApplicationContext())) {
+            if (networkUtility.networkAvailable(getApplicationContext())) {
                 mWebview.loadUrl(profileUrl);
-            }
-            else {
-                Snackbar.make(findViewById(R.id.user_details), "No internet connection", Snackbar.LENGTH_INDEFINITE).setDuration(60000)
-                    .setAction("Retry", new View.OnClickListener() {
-                                @Override
-                                public void onClick(View v) {
-                        profilePresenter.getGithubProfiles(username);
-                        }
-                                                }).show();
-            }
+            } else {
+                noInternetDialog();
             }
         });
     }
@@ -143,36 +130,36 @@ public class DetailActivity extends AppCompatActivity implements GithubUserProfi
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.activity_detail_actions, menu);
-        MenuCompat.setGroupDividerEnabled(menu,true);
-        if(menu instanceof MenuBuilder){
+        MenuCompat.setGroupDividerEnabled(menu, true);
+        if (menu instanceof MenuBuilder) {
             MenuBuilder menuBuilder = (MenuBuilder) menu;
             menuBuilder.setOptionalIconsVisible(true);
         }
         return true;
     }
 
-    public void shareProfile(){
+    public void shareProfile() {
         Intent shareIntent = new Intent(Intent.ACTION_SEND);
-        String text = "Check out this awesome developer @" + username + ", " +profileUrl +".";
+        String text = "Check out this awesome developer @" + username + ", " + profileUrl + ".";
         shareIntent.setType("text/plain");
         shareIntent.putExtra(Intent.EXTRA_TEXT, text);
         startActivity(Intent.createChooser(shareIntent,
                 getString(R.string.share)));
     }
 
-    public void closeApplication(){
+    public void closeApplication() {
         finish();
         moveTaskToBack(true);
     }
 
-    public void callDeveloper(){
+    public void callDeveloper() {
         String tel = "tel:" + getString(R.string.phone_number);
         Intent callIntent = new Intent(Intent.ACTION_DIAL);
         callIntent.setData(Uri.parse(tel));
         startActivity(callIntent);
     }
 
-    public void emailDeveloper(){
+    public void emailDeveloper() {
         String email = "mailto:" + getString(R.string.email_address);
         Intent emailIntent = new Intent(Intent.ACTION_SENDTO,
                 Uri.parse(email));
@@ -182,7 +169,7 @@ public class DetailActivity extends AppCompatActivity implements GithubUserProfi
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()){
+        switch (item.getItemId()) {
             case R.id.shareProfile:
                 shareProfile();
                 break;
@@ -201,49 +188,40 @@ public class DetailActivity extends AppCompatActivity implements GithubUserProfi
 
             default:
                 return super.onOptionsItemSelected(item);
-
         }
         return true;
     }
-    public void fetchDataHelper(){
+
+    public void fetchDataHelper() {
         EspressoIdlingResource.increment();
         NetworkUtility networkUtility = new NetworkUtility();
-        if(networkUtility.networkAvailable(this)) {
+        if (networkUtility.networkAvailable(this)) {
             Intent intent = getIntent();
-            progressDialog = new ProgressDialog(this);
             username = intent.getStringExtra("username");
-            String msg = "Loading " + username + " Info...";
-            progressDialog.setTitle(msg);
-            progressDialog.setMessage("Please wait.");
-            progressDialog.setCancelable(false);
-            progressDialog.show();
-            profilePresenter= new GithubProfilePresenter(this);
+            profilePresenter = new GithubProfilePresenter(this, this);
             profilePresenter.getGithubProfiles(username);
             Picasso.get().load(intent.getStringExtra("imageUrl")).into(imgProfile);
             txtUsername.setText(username);
+        } else {
+            noInternetDialog();
         }
-        else {
-            Snackbar.make(findViewById(R.id.user_details), "No internet connection", Snackbar.LENGTH_INDEFINITE).setDuration(60000)
-                    .setAction("Retry", new View.OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
-                            profilePresenter.getGithubProfiles(username);
-                        }
-                    })
-                    .show();
-        }
-    }
-
-    @Override
-    protected void onDestroy() {
-        if(progressDialog != null && progressDialog.isShowing()){
-            progressDialog.dismiss();
-        }
-        super.onDestroy();
     }
 
     @VisibleForTesting
     public IdlingResource getCountingIdlingResource() {
         return EspressoIdlingResource.getIdlingResource();
+    }
+
+    private void noInternetDialog() {
+        dialog = new SweetAlertDialog(this, SweetAlertDialog.CUSTOM_IMAGE_TYPE);
+        dialog.setCustomImage(R.drawable.ic_wifi);
+        dialog.setTitleText("No internet connection");
+        dialog.setContentText("Make sure that WI-FI or mobile data is turned on, then try again");
+        dialog.setConfirmClickListener(sweetAlertDialog -> {
+            dialog.dismissWithAnimation();
+            profilePresenter.getGithubProfiles(username);
+        });
+        dialog.setCancelable(false);
+        dialog.show();
     }
 }

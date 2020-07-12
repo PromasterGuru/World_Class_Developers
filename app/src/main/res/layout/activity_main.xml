@@ -3,32 +3,32 @@
         xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
         <variable
-            name="githubUsers"
-            type="com.topnotch.developers.model.GithubUsers" />
+                name="githubUsers"
+                type="com.topnotch.developers.model.GithubUsers" />
     </data>
 
     <LinearLayout
-        android:id="@+id/main_layout"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context=".view.MainActivity">
-
-        <android.support.v4.widget.SwipeRefreshLayout
-            android:id="@+id/swipeToReflesh"
+            android:id="@+id/main_layout"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="match_parent"
+            tools:context=".view.MainActivity">
 
-            <android.support.v7.widget.RecyclerView
-                android:layout_height="match_parent"
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+                android:id="@+id/swipeToReflesh"
                 android:layout_width="match_parent"
-                android:id="@+id/recycler_view"
-                android:layout_marginLeft="8dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="8dp"
-                xmlns:android="http://schemas.android.com/apk/res/android">
-            </android.support.v7.widget.RecyclerView>
+                android:layout_height="wrap_content">
 
-        </android.support.v4.widget.SwipeRefreshLayout>
+            <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recycler_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    tools:listitem="@layout/activity_users"
+                    android:layout_marginBottom="8dp" />
+
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
     </LinearLayout>
 </layout>

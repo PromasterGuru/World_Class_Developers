@@ -1,6 +1,6 @@
 package com.topnotch.developers.util;
 
-import android.support.test.espresso.IdlingResource;
+import androidx.test.espresso.IdlingResource;
 
 /**
  * Contains a static reference IdlingResource, and should be available only in a mock build type.

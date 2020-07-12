@@ -18,4 +18,5 @@
     <string name="email_address">pmutondo12@gmail.com</string>
     <string name="email_chooser">Send With</string>
     <string name="logout">Logout</string>
+    <string name="search">Search</string>
 </resources>

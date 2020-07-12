@@ -17,7 +17,6 @@ public class GithubPresenter {
 
 
     GithubUsersView usersView;
-    List<GithubUsers> result;
     GithubService githubService;
 
     public GithubPresenter(GithubUsersView usersView) {
@@ -35,9 +34,11 @@ public class GithubPresenter {
                     @Override
                     public void onResponse(Call<GithubUsersResponse> call, Response<GithubUsersResponse> response) {
                         GithubUsersResponse githubUserResponse = response.body();
-                        List<GithubUsers> result =
-                                githubUserResponse.getGithubUsersList();
-                        usersView.githubReadyUsers(result);
+                        if(githubUserResponse != null) {
+                            List<GithubUsers> result =
+                                    githubUserResponse.getGithubUsersList();
+                            usersView.githubReadyUsers(result);
+                        }
                     }
 
                     @Override

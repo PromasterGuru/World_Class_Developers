@@ -2,15 +2,18 @@ package com.topnotch.developers.adapter;
 
 import android.content.Context;
 import android.content.Intent;
-import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import androidx.recyclerview.widget.RecyclerView;
+
 import com.squareup.picasso.Picasso;
 import com.topnotch.developers.R;
 import com.topnotch.developers.view.DetailActivity;
+
+import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
 
@@ -50,6 +53,7 @@ public class GithubAdapter extends RecyclerView.Adapter<GithubAdapter.ViewHolder
             });
         }
     }
+    @NotNull
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.activity_users, parent, false);
