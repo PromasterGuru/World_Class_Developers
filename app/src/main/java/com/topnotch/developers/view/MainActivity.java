@@ -8,7 +8,8 @@ import android.view.MenuItem;
 import androidx.annotation.VisibleForTesting;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SearchView;
-import androidx.databinding.DataBindingUtil;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
@@ -17,35 +18,34 @@ import androidx.test.espresso.IdlingResource;
 import com.topnotch.developers.R;
 import com.topnotch.developers.adapter.GithubAdapter;
 import com.topnotch.developers.databinding.ActivityMainBinding;
+import com.topnotch.developers.dialogs.CustomProgressDialog;
+import com.topnotch.developers.dialogs.DialogInternetCheck;
+import com.topnotch.developers.dialogs.DialogNoRecord;
+import com.topnotch.developers.interfaces.OnInternetRetryListener;
 import com.topnotch.developers.model.GithubUsers;
 import com.topnotch.developers.presenter.GithubPresenter;
 import com.topnotch.developers.util.EspressoIdlingResource;
 import com.topnotch.developers.util.NetworkUtility;
-import com.topnotch.developers.util.ToastMessage;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import cn.pedant.SweetAlert.SweetAlertDialog;
-
-public class MainActivity extends AppCompatActivity implements GithubUsersView, SwipeRefreshLayout.OnRefreshListener {
-
-    GithubAdapter adapter;
-    RecyclerView recyclerView;
-    RecyclerView.LayoutManager layoutManager;
+public class MainActivity extends AppCompatActivity implements GithubUsersView, SwipeRefreshLayout.OnRefreshListener, OnInternetRetryListener {
+    private GithubAdapter adapter;
+    private RecyclerView recyclerView;
+    private RecyclerView.LayoutManager layoutManager;
     private List<String> usernames;
     private List<String> imageUrls;
     private SwipeRefreshLayout swipeRefreshLayout;
-    private SweetAlertDialog dialog;
-    private ToastMessage toast;
-    NetworkUtility networkUtility = new NetworkUtility();
+    private NetworkUtility networkUtility = new NetworkUtility();
     private String query = "location:Nairobi";
-    ActivityMainBinding mainActivityBinding;
+    private ActivityMainBinding mainActivityBinding;
+    private CustomProgressDialog progressDialog = new CustomProgressDialog();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        mainActivityBinding = DataBindingUtil.setContentView(this, R.layout.activity_main);
+        mainActivityBinding = ActivityMainBinding.inflate(getLayoutInflater());
         swipeRefreshLayout = mainActivityBinding.swipeToReflesh;
         swipeRefreshLayout.setOnRefreshListener(this);
         loadGithubUsers();
@@ -55,33 +55,27 @@ public class MainActivity extends AppCompatActivity implements GithubUsersView, 
     public void githubReadyUsers(List<GithubUsers> githubUsers) {
         usernames = new ArrayList<>();
         imageUrls = new ArrayList<>();
-        if (githubUsers.size() > 0) {
+        if (githubUsers != null && githubUsers.size() > 0) {
             for (GithubUsers githubUser : githubUsers) {
                 imageUrls.add(githubUser.getProfileImage());
                 usernames.add(githubUser.getUserName());
             }
+            progressDialog.dialog.dismiss();
             initRecyclerView();
-            dialog.dismissWithAnimation();
             EspressoIdlingResource.decrement();
         } else {
-            String msg = "We couldn't find " + query.replace("+", " ");
-            dialog.dismissWithAnimation();
-            dialog = new SweetAlertDialog(this, SweetAlertDialog.WARNING_TYPE);
-            dialog.setTitleText("No Record Found!");
-            dialog.setContentText(msg);
-            dialog.setConfirmClickListener(sweetAlertDialog -> {
-                dialog.dismissWithAnimation();
-                query = "location:Nairobi";
-                loadGithubUsers();
-            });
-            dialog.setCancelable(false);
-            dialog.show();
+            progressDialog.dialog.dismiss();
+            showNoRecordDialog(query.replace("location:","").replace("+", " "));
         }
     }
 
     public void initRecyclerView() {
         recyclerView = mainActivityBinding.recyclerView;
-        layoutManager = new GridLayoutManager(this, 2);
+        if (getResources().getDisplayMetrics().widthPixels > getResources().getDisplayMetrics().heightPixels) {
+            layoutManager = new GridLayoutManager(this, 3);
+        } else {
+            layoutManager = new GridLayoutManager(this, 2);
+        }
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setHasFixedSize(true);
         adapter = new GithubAdapter(this, usernames, imageUrls);
@@ -91,7 +85,6 @@ public class MainActivity extends AppCompatActivity implements GithubUsersView, 
     @Override
     public void onRefresh() {
         loadGithubUsers();
-        dialog.dismissWithAnimation();
         swipeRefreshLayout.setRefreshing(false);
     }
 
@@ -100,13 +93,9 @@ public class MainActivity extends AppCompatActivity implements GithubUsersView, 
             GithubPresenter presenter = new GithubPresenter(this);
             presenter.getGithubUsers(query);
             EspressoIdlingResource.increment();
-            dialog = new SweetAlertDialog(this, SweetAlertDialog.PROGRESS_TYPE);
-            dialog.setTitleText("Fetching Developers");
-            dialog.setContentText("Please wait...");
-            dialog.setCancelable(false);
-            dialog.show();
+            progressDialog.show(this, "Fetching Developers in your Country", "Please wait...");
         } else {
-            noInternetDialog();
+            showInternetDialog();
         }
     }
 
@@ -116,8 +105,24 @@ public class MainActivity extends AppCompatActivity implements GithubUsersView, 
             presenter.getGithubUsers(q);
             EspressoIdlingResource.increment();
         } else {
-            noInternetDialog();
+            showInternetDialog();
         }
+    }
+
+    private void showInternetDialog() {
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        DialogInternetCheck dialogInternetCheck = new DialogInternetCheck();
+        fragmentTransaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
+        fragmentTransaction.add(android.R.id.content, dialogInternetCheck, "Internet Dialog").addToBackStack(null).commit();
+    }
+
+    private void showNoRecordDialog(String query) {
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        DialogNoRecord dialogNoRecord = new DialogNoRecord(query);
+        fragmentTransaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
+        fragmentTransaction.add(android.R.id.content, dialogNoRecord, "No record found Dialog").addToBackStack(null).commit();
     }
 
     @VisibleForTesting
@@ -156,16 +161,8 @@ public class MainActivity extends AppCompatActivity implements GithubUsersView, 
         return true;
     }
 
-    private void noInternetDialog() {
-        dialog = new SweetAlertDialog(this, SweetAlertDialog.CUSTOM_IMAGE_TYPE);
-        dialog.setCustomImage(R.drawable.ic_wifi);
-        dialog.setTitleText("No Internet Connection");
-        dialog.setContentText("Make sure that WI-FI or mobile data is turned on, then try again");
-        dialog.setConfirmClickListener(sweetAlertDialog -> {
-            dialog.dismissWithAnimation();
-            loadGithubUsers();
-        });
-        dialog.setCancelable(false);
-        dialog.show();
+    @Override
+    public void onRetry(boolean retry) {
+        loadGithubUsers();
     }
 }

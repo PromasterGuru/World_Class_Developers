@@ -3,8 +3,13 @@
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
+    <color name="colorDanger">#C56675</color>
     <color name="toolbar_color">#149621</color>
     <color name="toolbar_text_color">#FFFFFF</color>
+    <color name="white">#FFFFFFFF</color>
     <color name="frame_color">#FAFAFA</color>
     <color name="username_color">#45818E</color>
+    <color name="transparent">#00ffffff</color>
+    <color name="translucent">#CC000000</color>
+    <color name="dialogBackground">#80000000</color>
 </resources>

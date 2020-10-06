@@ -19,4 +19,12 @@
     <string name="email_chooser">Send With</string>
     <string name="logout">Logout</string>
     <string name="search">Search</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="retry">Retry</string>
+    <string name="cancel">Cancel</string>
+    <string name="check_your_internet_connection_and_try_again">Check your internet connection and try again!</string>
+    <string name="no_internet">NO INTERNET</string>
+    <string name="please_wait">Please wait...</string>
+    <string name="ok">OK</string>
 </resources>
