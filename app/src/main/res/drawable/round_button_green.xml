@@ -4,6 +4,6 @@
     <corners android:radius="@dimen/lb_40_sp" />
     <gradient
         android:angle="180"
-        android:endColor="@color/main_green_color"
+        android:endColor="@color/toolbar_color"
         android:startColor="@color/colorPrimary" />
 </shape>

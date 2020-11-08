@@ -10,9 +10,9 @@ import retrofit2.http.Path;
 import retrofit2.http.Query;
 
 public interface GithubApi {
-    @GET("search/users?client_id=" + BuildConfig.CLIENT_ID + "&client_secret=" + BuildConfig.CLIENT_SECRET + "&per_page=500")
+    @GET("search/users?client_id=" + BuildConfig.CLIENT_ID + "&client_secret=" + BuildConfig.CLIENT_SECRET)
     Call<GithubUsersResponse> githubUsersList(@Query(value = "q",
-            encoded = true) String query);
+            encoded = true) String query, @Query("page") int page, @Query("per_page") int per_page);
 
     @GET("users/{username}?client_id=" + BuildConfig.CLIENT_ID + "&client_secret=" + BuildConfig.CLIENT_SECRET)
     Call<GithubUserProfile> getUserProfile(@Path("username") String username);

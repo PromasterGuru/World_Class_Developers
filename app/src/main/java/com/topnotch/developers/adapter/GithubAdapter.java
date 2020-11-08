@@ -1,78 +1,119 @@
 package com.topnotch.developers.adapter;
 
-import android.content.Context;
-import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Filter;
+import android.widget.Filterable;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.squareup.picasso.Picasso;
 import com.topnotch.developers.R;
-import com.topnotch.developers.view.DetailActivity;
+import com.topnotch.developers.interfaces.IOnFilterListener;
+import com.topnotch.developers.model.GithubUser;
 
-import org.jetbrains.annotations.NotNull;
-
+import java.util.ArrayList;
 import java.util.List;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
-public class GithubAdapter extends RecyclerView.Adapter<GithubAdapter.ViewHolder>{
+public class GithubAdapter extends RecyclerView.Adapter<GithubAdapter.ViewHolder> implements Filterable {
 
-    private final List<String> usernames;
-    private final List<String> imageUrls;
-    private final Context context;
+    private final View.OnClickListener onClickListener;
+    private IOnFilterListener onFilterListener;
+    private List<GithubUser> githubUsers = new ArrayList<>();
+    private List<GithubUser> filteredGithubUsers = new ArrayList<>();
 
-    public GithubAdapter(Context context, List<String> usernames, List<String> imageUrls) {
-        this.usernames = usernames;
-        this.imageUrls = imageUrls;
-        this.context = context;
+    public GithubAdapter(View.OnClickListener onClickListener, IOnFilterListener onFilterListener) {
+        this.onClickListener = onClickListener;
+        this.onFilterListener = onFilterListener;
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder{
-        public final View itemView;
-        public final TextView username;
-        public final CircleImageView imageUrl;
+    public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+        public View parent;
+        public TextView tvUsername;
+        public CircleImageView circleImageView;
 
-        public ViewHolder(View itemView) {
-            super(itemView);
-            itemView.setTag(this);
-            this.itemView = itemView;
-            username = itemView.findViewById(R.id.txtUsername);
-            imageUrl = itemView.findViewById(R.id.imgUser);
-            itemView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Intent intent = new Intent(context, DetailActivity.class);
-                    intent.putExtra("username", usernames.get(getAdapterPosition()));
-                    intent.putExtra("imageUrl", imageUrls.get(getAdapterPosition()));
-                    context.startActivity(intent);
-                }
-            });
+        public ViewHolder(View v) {
+            super(v);
+            parent = ((ViewGroup) v).getChildAt(0);
+            tvUsername = v.findViewById(R.id.txtUsername);
+            circleImageView = v.findViewById(R.id.imgUser);
+        }
+
+        @Override
+        public void onClick(View v) {
+            onClickListener.onClick(parent);
+        }
+
+        public void bind(GithubUser githubUser) {
+            tvUsername.setText(githubUser.getLogin());
+            Picasso.get().load(githubUser.getAvatarUrl()).into(circleImageView);
+            parent.setTag(githubUser);
         }
     }
-    @NotNull
+
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.activity_users, parent, false);
-        return new ViewHolder(view);
+        return new ViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.activity_users, parent, false));
     }
 
     @Override
-    public void onBindViewHolder(ViewHolder viewHolder, int position) {
-        viewHolder.username.setText(usernames.get(viewHolder.getAdapterPosition()));
-        Picasso.get().load(imageUrls.get(viewHolder.getAdapterPosition())).into(viewHolder.imageUrl);
+    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+        holder.itemView.setOnClickListener(v -> onClickListener.onClick(((ViewGroup) v).getChildAt(0)));
+        holder.bind(filteredGithubUsers.get(holder.getAdapterPosition()));
     }
 
     @Override
     public int getItemCount() {
-        if(usernames != null){
-            return usernames.size();
+        return filteredGithubUsers.size();
+    }
+
+    public void updateUsers(List<GithubUser> users) {
+        if (users.size() >= 50) {
+            this.githubUsers.addAll(users);
+            this.filteredGithubUsers.addAll(users);
+        } else {
+            this.githubUsers.clear();
+            this.filteredGithubUsers.clear();
+            this.githubUsers = users;
+            this.filteredGithubUsers = users;
         }
-        else{
-            return 0;
-        }
+        notifyDataSetChanged();
+    }
+
+    @Override
+    public Filter getFilter() {
+        final String[] keyWord = new String[1];
+        return new Filter() {
+            @Override
+            protected FilterResults performFiltering(CharSequence charSequence) {
+                keyWord[0] = charSequence.toString();
+                if (keyWord[0].isEmpty()) {
+                    filteredGithubUsers = githubUsers;
+                } else {
+                    List<GithubUser> filteredList = new ArrayList<>();
+                    for (GithubUser githubUser : githubUsers) {
+                        if (githubUser.getLogin().toLowerCase().contains(keyWord[0].toLowerCase())) {
+                            filteredList.add(githubUser);
+                        }
+                    }
+                    filteredGithubUsers = filteredList;
+                }
+                FilterResults filterResults = new FilterResults();
+                filterResults.values = filteredGithubUsers;
+                return filterResults;
+            }
+
+            @Override
+            protected void publishResults(CharSequence constraint, FilterResults results) {
+                filteredGithubUsers = (List<GithubUser>) results.values;
+                onFilterListener.onFilterListener(keyWord[0], filteredGithubUsers.isEmpty());
+                notifyDataSetChanged();
+            }
+        };
     }
 }

@@ -5,7 +5,7 @@ import android.os.Parcelable;
 
 import com.google.gson.annotations.SerializedName;
 
-public class GithubUserProfile implements Parcelable {
+public class GithubUser implements Parcelable {
     @SerializedName("login")
     public String login;
     @SerializedName("id")
@@ -42,42 +42,15 @@ public class GithubUserProfile implements Parcelable {
     public String type;
     @SerializedName("site_admin")
     public Boolean siteAdmin;
-    @SerializedName("name")
-    public String name;
-    @SerializedName("company")
-    public String company;
-    @SerializedName("blog")
-    public String blog;
-    @SerializedName("location")
-    public String location;
-    @SerializedName("email")
-    public String email;
-    @SerializedName("hireable")
-    public Boolean hireable;
-    @SerializedName("bio")
-    public String bio;
-    @SerializedName("twitter_username")
-    public String twitterUsername;
-    @SerializedName("public_repos")
-    public Integer publicRepos;
-    @SerializedName("public_gists")
-    public Integer publicGists;
-    @SerializedName("followers")
-    public Integer followers;
-    @SerializedName("following")
-    public Integer following;
-    @SerializedName("created_at")
-    public String createdAt;
-    @SerializedName("updated_at")
-    public String updatedAt;
-
+    @SerializedName("score")
+    public Double score;
 
 
     public String getLogin() {
         return login;
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
@@ -145,60 +118,8 @@ public class GithubUserProfile implements Parcelable {
         return siteAdmin;
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public String getCompany() {
-        return company;
-    }
-
-    public String getBlog() {
-        return blog;
-    }
-
-    public String getLocation() {
-        return location;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public Boolean getHireable() {
-        return hireable;
-    }
-
-    public String getBio() {
-        return bio;
-    }
-
-    public String getTwitterUsername() {
-        return twitterUsername;
-    }
-
-    public int getPublicRepos() {
-        return publicRepos;
-    }
-
-    public int getPublicGists() {
-        return publicGists;
-    }
-
-    public int getFollowers() {
-        return followers;
-    }
-
-    public int getFollowing() {
-        return following;
-    }
-
-    public String getCreatedAt() {
-        return createdAt;
-    }
-
-    public String getUpdatedAt() {
-        return updatedAt;
+    public Double getScore() {
+        return score;
     }
 
     @Override
@@ -226,23 +147,11 @@ public class GithubUserProfile implements Parcelable {
         dest.writeString(this.receivedEventsUrl);
         dest.writeString(this.type);
         dest.writeValue(this.siteAdmin);
-        dest.writeString(this.name);
-        dest.writeString(this.company);
-        dest.writeString(this.blog);
-        dest.writeString(this.location);
-        dest.writeString(this.email);
-        dest.writeValue(this.hireable);
-        dest.writeString(this.bio);
-        dest.writeString(this.twitterUsername);
-        dest.writeInt(this.publicRepos);
-        dest.writeInt(this.publicGists);
-        dest.writeInt(this.followers);
-        dest.writeInt(this.following);
-        dest.writeString(this.createdAt);
-        dest.writeString(this.updatedAt);
+        dest.writeDouble(this.score);
     }
 
-    protected GithubUserProfile(Parcel in) {
+
+    protected GithubUser(Parcel in) {
         login = in.readString();
         id = in.readInt();
         nodeId = in.readString();
@@ -261,31 +170,18 @@ public class GithubUserProfile implements Parcelable {
         receivedEventsUrl = in.readString();
         type = in.readString();
         siteAdmin = (Boolean)in.readValue(null);
-        name = in.readString();
-        company = in.readString();
-        blog = in.readString();
-        location = in.readString();
-        email = in.readString();
-        hireable = (Boolean)in.readValue(null);
-        bio = in.readString();
-        twitterUsername = in.readString();
-        publicRepos = in.readInt();
-        publicGists = in.readInt();
-        followers = in.readInt();
-        following = in.readInt();
-        createdAt = in.readString();
-        updatedAt = in.readString();
+        score = in.readDouble();
     }
 
-    public static final Creator<GithubUserProfile> CREATOR = new Creator<GithubUserProfile>() {
+    public static final Creator<GithubUser> CREATOR = new Creator<GithubUser>() {
         @Override
-        public GithubUserProfile createFromParcel(Parcel in) {
-            return new GithubUserProfile(in);
+        public GithubUser createFromParcel(Parcel in) {
+            return new GithubUser(in);
         }
 
         @Override
-        public GithubUserProfile[] newArray(int size) {
-            return new GithubUserProfile[size];
+        public GithubUser[] newArray(int size) {
+            return new GithubUser[size];
         }
     };
 }

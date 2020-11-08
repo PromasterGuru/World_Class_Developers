@@ -3,7 +3,6 @@ package com.topnotch.developers.view;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.net.Uri;
-import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
@@ -12,16 +11,20 @@ import android.view.View;
 import android.webkit.WebView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
-import androidx.annotation.RequiresApi;
 import androidx.annotation.VisibleForTesting;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.view.menu.MenuBuilder;
 import androidx.core.view.MenuCompat;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.test.espresso.IdlingResource;
 
 import com.squareup.picasso.Picasso;
 import com.topnotch.developers.R;
+import com.topnotch.developers.dialogs.DialogInternetCheck;
+import com.topnotch.developers.interfaces.IGithubUserProfileView;
 import com.topnotch.developers.model.GithubUserProfile;
 import com.topnotch.developers.presenter.GithubProfilePresenter;
 import com.topnotch.developers.util.EspressoIdlingResource;
@@ -32,10 +35,9 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
 
-import cn.pedant.SweetAlert.SweetAlertDialog;
 import de.hdodenhof.circleimageview.CircleImageView;
 
-public class DetailActivity extends AppCompatActivity implements GithubUserProfileView {
+public class DetailActivity extends AppCompatActivity implements IGithubUserProfileView {
     CircleImageView imgProfile;
     private WebView mWebview;
     TextView txtUsername, txtCreate_date, txtOrg, txtFollowers, txtFollowing, txtRepos, txtGists, txtBio;
@@ -43,13 +45,12 @@ public class DetailActivity extends AppCompatActivity implements GithubUserProfi
     private String profileUrl;
     private String organization;
     private String joinDate;
-    private String repos;
-    private String followers;
-    private String following;
+    private Integer repos;
+    private Integer followers;
+    private Integer following;
     private String bioInfo;
-    private String gists;
+    private Integer gists;
     private String username;
-    private SweetAlertDialog dialog;
     private GithubProfilePresenter profilePresenter;
 
 
@@ -57,68 +58,71 @@ public class DetailActivity extends AppCompatActivity implements GithubUserProfi
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail);
-        imgProfile = (CircleImageView) findViewById(R.id.userProfile);
-        txtUsername = (TextView) findViewById(R.id.userName);
-        txtCreate_date = (TextView) findViewById(R.id.userCreate_date);
-        txtOrg = (TextView) findViewById(R.id.userOrgs);
-        txtFollowers = (TextView) findViewById(R.id.userFollowers);
-        txtFollowing = (TextView) findViewById(R.id.userFollowing);
-        txtRepos = (TextView) findViewById(R.id.userRepositories);
-        txtGists = (TextView) findViewById(R.id.userGists);
-        txtBio = (TextView) findViewById(R.id.userBioInformation);
-        layout = (LinearLayout) findViewById(R.id.user_details);
+        imgProfile = findViewById(R.id.userProfile);
+        txtUsername = findViewById(R.id.userName);
+        txtCreate_date = findViewById(R.id.userCreate_date);
+        txtOrg = findViewById(R.id.userOrgs);
+        txtFollowers = findViewById(R.id.userFollowers);
+        txtFollowing = findViewById(R.id.userFollowing);
+        txtRepos = findViewById(R.id.userRepositories);
+        txtGists = findViewById(R.id.userGists);
+        txtBio = findViewById(R.id.userBioInformation);
+        layout = findViewById(R.id.user_details);
         fetchDataHelper();
     }
 
-    @RequiresApi(api = Build.VERSION_CODES.N)
+    @Override
     public void getReadyProfiles(GithubUserProfile githubUser) {
-        this.profileUrl = githubUser.getProfileUrl();
-        this.organization = githubUser.getCompany();
-        this.joinDate = githubUser.getJoinDate();
-        this.repos = githubUser.getRepos();
-        this.followers = githubUser.getFollowers();
-        this.following = githubUser.getFollowing();
-        this.bioInfo = githubUser.getBio();
-        this.gists = githubUser.getGists();
-        getProfiles();
-        EspressoIdlingResource.decrement();
+        if (githubUser != null) {
+            this.profileUrl = githubUser.getAvatarUrl();
+            this.organization = githubUser.getCompany();
+            this.joinDate = githubUser.getCreatedAt();
+            this.repos = githubUser.getPublicRepos();
+            this.followers = githubUser.getFollowers();
+            this.following = githubUser.getFollowing();
+            this.bioInfo = githubUser.getBio();
+            this.gists = githubUser.getPublicGists();
+            setProfile();
+            EspressoIdlingResource.decrement();
+        } else {
+            Toast.makeText(this, "An error occured while fetching user information", Toast.LENGTH_LONG).show();
+        }
     }
 
-    @RequiresApi(api = Build.VERSION_CODES.N)
-    public void getProfiles() {
+    public void setProfile() {
         try {
             joinDate = dateConverter();
+            if (this.organization == null) {
+                this.organization = "No organization found";
+            }
+            if (this.bioInfo == null) {
+                this.bioInfo = "No bio information found";
+            }
+            String date = "Joined on " + joinDate;
+            txtCreate_date.setText(date);
+            txtOrg.setText(organization);
+            txtFollowers.setText(String.valueOf(followers));
+            txtFollowing.setText(String.valueOf(following));
+            txtRepos.setText(String.valueOf(repos));
+            txtGists.setText(String.valueOf(gists));
+            txtBio.setText(bioInfo);
+            layout.setOnClickListener((View.OnClickListener) v -> {
+                NetworkUtility networkUtility = new NetworkUtility();
+                if (networkUtility.networkAvailable(getApplicationContext())) {
+                    setContentView(R.layout.web_view_layout);
+                    mWebview = (WebView) findViewById(R.id.help_webview);
+                    mWebview.setWebViewClient(new WebViewController());
+                    mWebview.loadUrl(profileUrl);
+                } else {
+                    showInternetDialog();
+                }
+            });
         } catch (ParseException e) {
+            Toast.makeText(this, e.getMessage(), Toast.LENGTH_LONG).show();
             Log.d("Error", "An error occurred " + e.getMessage());
         }
-        if (this.organization == null) {
-            this.organization = "User has no organization";
-        }
-        if (this.bioInfo == null) {
-            this.bioInfo = "User has no bio";
-        }
-        String date = "Joined on " + joinDate;
-        txtCreate_date.setText(date);
-        txtOrg.setText(organization);
-        txtFollowers.setText(followers);
-        txtFollowing.setText(following);
-        txtRepos.setText(repos);
-        txtGists.setText(gists);
-        txtBio.setText(bioInfo);
-        layout.setOnClickListener((View.OnClickListener) v -> {
-            setContentView(R.layout.web_view_layout);
-            mWebview = (WebView) findViewById(R.id.help_webview);
-            mWebview.setWebViewClient(new WebViewController());
-            NetworkUtility networkUtility = new NetworkUtility();
-            if (networkUtility.networkAvailable(getApplicationContext())) {
-                mWebview.loadUrl(profileUrl);
-            } else {
-                noInternetDialog();
-            }
-        });
     }
 
-    @RequiresApi(api = Build.VERSION_CODES.N)
     public String dateConverter() throws ParseException {
         SimpleDateFormat inputFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'", Locale.ENGLISH);
         SimpleDateFormat outputFormat = new SimpleDateFormat("MMM, d yyyy", Locale.ENGLISH);
@@ -198,30 +202,24 @@ public class DetailActivity extends AppCompatActivity implements GithubUserProfi
         if (networkUtility.networkAvailable(this)) {
             Intent intent = getIntent();
             username = intent.getStringExtra("username");
-            profilePresenter = new GithubProfilePresenter(this, this);
-            profilePresenter.getGithubProfiles(username);
+            profilePresenter = new GithubProfilePresenter(this, username);
             Picasso.get().load(intent.getStringExtra("imageUrl")).into(imgProfile);
             txtUsername.setText(username);
         } else {
-            noInternetDialog();
+            showInternetDialog();
         }
+    }
+
+    private void showInternetDialog() {
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        DialogInternetCheck dialogInternetCheck = new DialogInternetCheck();
+        fragmentTransaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
+        fragmentTransaction.add(android.R.id.content, dialogInternetCheck, "Internet Dialog").addToBackStack(null).commit();
     }
 
     @VisibleForTesting
     public IdlingResource getCountingIdlingResource() {
         return EspressoIdlingResource.getIdlingResource();
-    }
-
-    private void noInternetDialog() {
-        dialog = new SweetAlertDialog(this, SweetAlertDialog.CUSTOM_IMAGE_TYPE);
-        dialog.setCustomImage(R.drawable.ic_wifi);
-        dialog.setTitleText("No internet connection");
-        dialog.setContentText("Make sure that WI-FI or mobile data is turned on, then try again");
-        dialog.setConfirmClickListener(sweetAlertDialog -> {
-            dialog.dismissWithAnimation();
-            profilePresenter.getGithubProfiles(username);
-        });
-        dialog.setCancelable(false);
-        dialog.show();
     }
 }
