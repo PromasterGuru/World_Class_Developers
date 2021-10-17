@@ -26,4 +26,5 @@
     <string name="please_wait">Please wait...</string>
     <string name="ok">OK</string>
     <string name="click_search_icon_on_your_keyboard">Click search icon on your keyboard</string>
+    <string name="exit">Exit</string>
 </resources>

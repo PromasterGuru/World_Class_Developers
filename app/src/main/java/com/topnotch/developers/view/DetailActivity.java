@@ -4,7 +4,6 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -74,7 +73,7 @@ public class DetailActivity extends AppCompatActivity implements IGithubUserProf
     @Override
     public void getReadyProfiles(GithubUserProfile githubUser) {
         if (githubUser != null) {
-            this.profileUrl = githubUser.getAvatarUrl();
+            this.profileUrl = githubUser.getHtmlUrl();
             this.organization = githubUser.getCompany();
             this.joinDate = githubUser.getCreatedAt();
             this.repos = githubUser.getPublicRepos();
@@ -85,7 +84,7 @@ public class DetailActivity extends AppCompatActivity implements IGithubUserProf
             setProfile();
             EspressoIdlingResource.decrement();
         } else {
-            Toast.makeText(this, "An error occured while fetching user information", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "An error occurred while fetching user information", Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -118,8 +117,7 @@ public class DetailActivity extends AppCompatActivity implements IGithubUserProf
                 }
             });
         } catch (ParseException e) {
-            Toast.makeText(this, e.getMessage(), Toast.LENGTH_LONG).show();
-            Log.d("Error", "An error occurred " + e.getMessage());
+            Toast.makeText(this, e.getMessage(), Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -167,8 +165,7 @@ public class DetailActivity extends AppCompatActivity implements IGithubUserProf
         String email = "mailto:" + getString(R.string.email_address);
         Intent emailIntent = new Intent(Intent.ACTION_SENDTO,
                 Uri.parse(email));
-        startActivity(Intent.createChooser(emailIntent,
-                getString(R.string.email_chooser)));
+        startActivity(Intent.createChooser(emailIntent, getString(R.string.email_chooser)));
     }
 
     @Override

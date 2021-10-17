@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="AndroidGradleBuildConfiguration">
-    <option name="SYNC_PROJECT_BEFORE_BUILD" value="true" />
-  </component>
   <component name="AndroidLayouts">
     <shared>
       <config />
@@ -13,38 +10,57 @@
     <option name="TOOL_WINDOW_LOG_LEVEL" value="debug" />
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="NONE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="6feaf8bb-7b95-4c25-8e8a-0e4db5e6978e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/topnotch/developers/interfaces/EndlessRecyclerOnScrollListener.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/topnotch/developers/interfaces/IGithubUsersPresenter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/topnotch/developers/interfaces/IGithubUsersView.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/topnotch/developers/interfaces/IOnFilterListener.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/topnotch/developers/model/GithubUser.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_search_gray.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_empty_search_view.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/ic_launcher.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/ic_launcher_foreground.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/ic_launcher_round.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-ldpi/ic_launcher.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/ic_launcher.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/ic_launcher_foreground.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/ic_launcher_round.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/ic_launcher.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/ic_launcher_foreground.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/ic_launcher_round.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/ic_launcher.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/ic_launcher_foreground.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/ic_launcher_foreground.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_apps_common_testing_accessibility_framework_accessibility_test_framework_2_0_jar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_code_findbugs_jsr305_2_0_1_jar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_squareup_javawriter_2_1_1_jar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__javax_inject_javax_inject_1_jar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__junit_junit_4_12_jar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_hamcrest_hamcrest_core_1_3_jar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_hamcrest_hamcrest_integration_1_3_jar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_hamcrest_hamcrest_library_1_3_jar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/app/app.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/World_Class_Developers.iml" beforeDir="false" afterPath="$PROJECT_DIR$/World_Class_Developers.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/app.iml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/topnotch/developers/adapter/GithubAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/topnotch/developers/adapter/GithubAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/topnotch/developers/model/GithubUserProfile.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/topnotch/developers/model/GithubUserProfile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/topnotch/developers/model/GithubUsers.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/topnotch/developers/model/GithubUsersResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/topnotch/developers/model/GithubUsersResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/topnotch/developers/presenter/GithubPresenter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/topnotch/developers/presenter/GithubPresenter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/topnotch/developers/presenter/GithubProfilePresenter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/topnotch/developers/presenter/GithubProfilePresenter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/topnotch/developers/service/GithubApi.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/topnotch/developers/service/GithubApi.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/topnotch/developers/util/ToastMessage.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/topnotch/developers/view/DetailActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/topnotch/developers/view/DetailActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/topnotch/developers/view/GithubUserProfileView.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/topnotch/developers/interfaces/IGithubUserProfileView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/topnotch/developers/view/GithubUsersView.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/topnotch/developers/view/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/topnotch/developers/view/MainActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/round_button_green.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/round_button_green.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_users.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_users.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/dialog_no_record.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/dialog_no_record.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/menu/activity_detail_actions.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/menu/activity_detail_actions.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/ic_launcher_background.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/ic_launcher_background.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/local.properties" beforeDir="false" afterPath="$PROJECT_DIR$/local.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,10 +70,7 @@
   <component name="CodeInsightWorkspaceSettings">
     <option name="optimizeImportsOnTheFly" value="true" />
   </component>
-  <component name="CompilerWorkspaceConfiguration">
-    <option name="MAKE_PROJECT_ON_SAVE" value="true" />
-  </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="Nexus_5_API_24" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[R58M45LM65W]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -97,6 +110,13 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/app/build.gradle" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/app/src/main/res/values/colors.xml" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/apikey.properties" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/app/src/main/res/values/styles.xml" root0="FORCE_HIGHLIGHTING" />
+  </component>
   <component name="KotlinCodeInsightWorkspaceSettings">
     <option name="optimizeImportsOnTheFly" value="true" />
   </component>
@@ -105,7 +125,6 @@
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectViewState">
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
@@ -117,13 +136,16 @@
     <property name="ExportApk.ApkPath" value="$PROJECT_DIR$/app" />
     <property name="ExportApk.BuildVariants" value="debug&#10;release" />
     <property name="ExportApk.SignV2" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="RunOnceActivity.cidr.known.project.marker" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="SHOW_ALL_PROCESSES" value="false" />
     <property name="android.project.structure.last.selected" value="SDK Location" />
     <property name="android.project.structure.proportion" value="0.15" />
     <property name="android.sdk.path" value="$USER_HOME$/Library/Android/sdk" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/src/main/res/drawable" />
+    <property name="cidr.known.project.marker" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/src/main/res/values" />
     <property name="project.structure.last.edited" value="Dependencies" />
     <property name="project.structure.proportion" value="0.17" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -131,19 +153,22 @@
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/app/src/main/res/layout" />
-    </key>
-    <key name="MoveKotlinTopLevelDeclarationsDialog.RECENTS_KEY">
-      <recent name="com.topnotch.developers.interfaces" />
-      <recent name="com.topnotch.developers.dialogs" />
-    </key>
     <key name="CreateClassDialog.RecentsKey">
       <recent name="com.example.convergecodelab.view" />
       <recent name="com.example.convergecodelab.util" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/src/main/res/values" />
+      <recent name="$PROJECT_DIR$/app/src/main/res" />
       <recent name="$PROJECT_DIR$/app/src/main/res/drawable" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/src/main/res/drawable" />
+      <recent name="$PROJECT_DIR$/app/src/main/res/layout" />
+    </key>
+    <key name="MoveKotlinTopLevelDeclarationsDialog.RECENTS_KEY">
+      <recent name="com.topnotch.developers.interfaces" />
+      <recent name="com.topnotch.developers.dialogs" />
     </key>
   </component>
   <component name="RunManager">
@@ -155,12 +180,14 @@
       </method>
     </configuration>
     <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
-      <module name="app" />
+      <module name="World_Class_Developers.app" />
       <option name="DEPLOY" value="true" />
       <option name="DEPLOY_APK_FROM_BUNDLE" value="false" />
       <option name="DEPLOY_AS_INSTANT" value="false" />
       <option name="ARTIFACT_NAME" value="" />
       <option name="PM_INSTALL_OPTIONS" value="" />
+      <option name="ALL_USERS" value="false" />
+      <option name="ALWAYS_INSTALL_WITH_PM" value="false" />
       <option name="DYNAMIC_FEATURES_DISABLED_LIST" value="" />
       <option name="ACTIVITY_EXTRA_FLAGS" value="" />
       <option name="MODE" value="default_activity" />
@@ -168,6 +195,7 @@
       <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
       <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
       <option name="FORCE_STOP_RUNNING_APP" value="true" />
+      <option name="INSPECTION_WITHOUT_ACTIVITY_RESTART" value="false" />
       <option name="TARGET_SELECTION_MODE" value="DEVICE_AND_SNAPSHOT_COMBO_BOX" />
       <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="-1" />
       <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
@@ -196,16 +224,22 @@
       </Native>
       <Profilers>
         <option name="ADVANCED_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_PROFILING_ENABLED" value="false" />
         <option name="STARTUP_CPU_PROFILING_ENABLED" value="false" />
         <option name="STARTUP_CPU_PROFILING_CONFIGURATION_NAME" value="Sample Java Methods" />
+        <option name="STARTUP_NATIVE_MEMORY_PROFILING_ENABLED" value="false" />
+        <option name="NATIVE_MEMORY_SAMPLE_RATE_BYTES" value="2048" />
       </Profilers>
       <option name="DEEP_LINK" value="" />
       <option name="ACTIVITY_CLASS" value="" />
+      <option name="SEARCH_ACTIVITY_IN_GLOBAL_SCOPE" value="false" />
+      <option name="SKIP_ACTIVITY_VALIDATION" value="false" />
       <method v="2">
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
       </method>
     </configuration>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -219,126 +253,17 @@
     </task>
     <servers />
   </component>
-  <component name="WindowStateProjectService">
-    <state x="670" y="199" width="642" height="716" key="#app" timestamp="1601970682526">
-      <screen x="72" y="27" width="1848" height="1053" />
-    </state>
-    <state x="670" y="199" width="642" height="716" key="#app/0.1080.1920.1080/72.27.1848.1053@72.27.1848.1053" timestamp="1601970682526" />
-    <state x="454" y="211" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1602610570364">
-      <screen x="72" y="27" width="1848" height="1053" />
-    </state>
-    <state x="454" y="211" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.1080.1920.1080/72.27.1848.1053@72.27.1848.1053" timestamp="1601970662945" />
-    <state x="454" y="211" key="#com.intellij.execution.impl.EditConfigurationsDialog/72.27.1848.1053/0.1080.1920.1080@72.27.1848.1053" timestamp="1602610570364" />
-    <state x="725" y="136" width="374" height="1053" key="#com.intellij.ide.util.MemberChooser" timestamp="1604038704245">
-      <screen x="72" y="27" width="1848" height="1053" />
-    </state>
-    <state x="725" y="136" width="442" height="569" key="#com.intellij.ide.util.MemberChooser/0.1080.1920.1080/72.27.1848.1053@72.27.1848.1053" timestamp="1601984486027" />
-    <state x="725" y="136" width="374" height="599" key="#com.intellij.ide.util.MemberChooser/72.27.1848.1053@72.27.1848.1053" timestamp="1604038704245" />
-    <state x="725" y="27" width="374" height="1053" key="#com.intellij.ide.util.MemberChooser/72.27.1848.2133@72.27.1848.2133" timestamp="1603369684281" />
-    <state x="679" y="281" width="624" height="551" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1601977120783">
-      <screen x="72" y="27" width="1848" height="1053" />
-    </state>
-    <state x="679" y="281" width="624" height="551" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.1080.1920.1080/72.27.1848.1053@72.27.1848.1053" timestamp="1601977120783" />
-    <state x="729" y="302" width="524" height="509" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1602618683882">
-      <screen x="72" y="27" width="1848" height="1053" />
-    </state>
-    <state x="729" y="302" width="524" height="509" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.1080.1920.1080/72.27.1848.1053@72.27.1848.1053" timestamp="1601983826941" />
-    <state x="729" y="302" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/72.27.1848.1053@72.27.1848.1053" timestamp="1602618683882" />
-    <state x="749" y="206" key="#org.jetbrains.kotlin.idea.refactoring.move.moveDeclarations.ui.MoveKotlinTopLevelDeclarationsDialog" timestamp="1604060119184">
-      <screen x="72" y="27" width="1848" height="1053" />
-    </state>
-    <state x="749" y="206" key="#org.jetbrains.kotlin.idea.refactoring.move.moveDeclarations.ui.MoveKotlinTopLevelDeclarationsDialog/0.1080.1920.1080/72.27.1848.1053@72.27.1848.1053" timestamp="1601974621532" />
-    <state x="749" y="206" key="#org.jetbrains.kotlin.idea.refactoring.move.moveDeclarations.ui.MoveKotlinTopLevelDeclarationsDialog/72.27.1848.1053@72.27.1848.1053" timestamp="1604060119183" />
-    <state x="732" y="448" width="518" height="218" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1601974002573">
-      <screen x="72" y="27" width="1848" height="1053" />
-    </state>
-    <state x="732" y="448" width="518" height="218" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.1080.1920.1080/72.27.1848.1053@72.27.1848.1053" timestamp="1601974002573" />
-    <state x="579" y="311" width="824" height="491" key="AndroidCreateResourceFileDialog" timestamp="1602609582938">
-      <screen x="72" y="27" width="1848" height="1053" />
-    </state>
-    <state x="579" y="311" width="824" height="491" key="AndroidCreateResourceFileDialog/0.1080.1920.1080/72.27.1848.1053@72.27.1848.1053" timestamp="1601978028253" />
-    <state x="579" y="311" key="AndroidCreateResourceFileDialog/72.27.1848.1053/0.1080.1920.1080@72.27.1848.1053" timestamp="1602609582938" />
-    <state x="725" y="524" width="387" height="391" key="AndroidCreateXmlResourceDialog" timestamp="1603453384629">
-      <screen x="72" y="27" width="1848" height="1053" />
-    </state>
-    <state x="725" y="524" width="387" height="384" key="AndroidCreateXmlResourceDialog/0.1080.1920.1080/72.27.1848.1053@72.27.1848.1053" timestamp="1601982276534" />
-    <state x="725" y="524" width="387" height="391" key="AndroidCreateXmlResourceDialog/72.27.1848.1053@72.27.1848.1053" timestamp="1603453384629" />
-    <state x="841" y="321" width="309" height="472" key="AndroidProcessChooserDialog" timestamp="1602611500087">
-      <screen x="72" y="27" width="1848" height="1053" />
-    </state>
-    <state x="841" y="321" width="309" height="472" key="AndroidProcessChooserDialog/72.27.1848.1053/0.1080.1920.1080@72.27.1848.1053" timestamp="1602611500087" />
-    <state width="479" height="506" key="DebuggerActiveHint" timestamp="1603444299348">
-      <screen x="72" y="27" width="1848" height="1053" />
-    </state>
-    <state width="479" height="506" key="DebuggerActiveHint/72.27.1848.1053@72.27.1848.1053" timestamp="1603444299348" />
-    <state x="662" y="311" key="Downloadable.Font.Dialog.Size" timestamp="1601974437085">
-      <screen x="72" y="27" width="1848" height="1053" />
-    </state>
-    <state x="662" y="311" key="Downloadable.Font.Dialog.Size/0.1080.1920.1080/72.27.1848.1053@72.27.1848.1053" timestamp="1601974437085" />
-    <state x="690" y="209" width="424" height="491" key="FileChooserDialogImpl" timestamp="1601982138141">
-      <screen x="72" y="27" width="1848" height="1053" />
-    </state>
-    <state x="690" y="209" width="424" height="491" key="FileChooserDialogImpl/0.1080.1920.1080/72.27.1848.1053@72.27.1848.1053" timestamp="1601982138141" />
-    <state width="1802" height="404" key="GridCell.Tab.0.bottom" timestamp="1604508135495">
-      <screen x="72" y="27" width="1848" height="1053" />
-    </state>
-    <state width="1802" height="229" key="GridCell.Tab.0.bottom/0.1080.1920.1080/72.27.1848.1053@72.27.1848.1053" timestamp="1601989482571" />
-    <state width="1874" height="-36" key="GridCell.Tab.0.bottom/72.0.1848.1080/0.1080.1920.1080@0.1080.1920.1080" timestamp="1604396978308" />
-    <state width="1802" height="404" key="GridCell.Tab.0.bottom/72.27.1848.1053/0.1080.1920.1080@72.27.1848.1053" timestamp="1604508135495" />
-    <state width="1802" height="325" key="GridCell.Tab.0.bottom/72.27.1848.1053@72.27.1848.1053" timestamp="1604045310527" />
-    <state width="1802" height="41" key="GridCell.Tab.0.bottom/72.27.1848.2133@72.27.1848.2133" timestamp="1603370195968" />
-    <state width="1802" height="404" key="GridCell.Tab.0.center" timestamp="1604508135495">
-      <screen x="72" y="27" width="1848" height="1053" />
-    </state>
-    <state width="1802" height="229" key="GridCell.Tab.0.center/0.1080.1920.1080/72.27.1848.1053@72.27.1848.1053" timestamp="1601989482571" />
-    <state width="1874" height="-36" key="GridCell.Tab.0.center/72.0.1848.1080/0.1080.1920.1080@0.1080.1920.1080" timestamp="1604396978307" />
-    <state width="1802" height="404" key="GridCell.Tab.0.center/72.27.1848.1053/0.1080.1920.1080@72.27.1848.1053" timestamp="1604508135495" />
-    <state width="1802" height="325" key="GridCell.Tab.0.center/72.27.1848.1053@72.27.1848.1053" timestamp="1604045310527" />
-    <state width="1802" height="41" key="GridCell.Tab.0.center/72.27.1848.2133@72.27.1848.2133" timestamp="1603370195968" />
-    <state width="1802" height="404" key="GridCell.Tab.0.left" timestamp="1604508135495">
-      <screen x="72" y="27" width="1848" height="1053" />
-    </state>
-    <state width="1802" height="229" key="GridCell.Tab.0.left/0.1080.1920.1080/72.27.1848.1053@72.27.1848.1053" timestamp="1601989482571" />
-    <state width="1874" height="-36" key="GridCell.Tab.0.left/72.0.1848.1080/0.1080.1920.1080@0.1080.1920.1080" timestamp="1604396978307" />
-    <state width="1802" height="404" key="GridCell.Tab.0.left/72.27.1848.1053/0.1080.1920.1080@72.27.1848.1053" timestamp="1604508135495" />
-    <state width="1802" height="325" key="GridCell.Tab.0.left/72.27.1848.1053@72.27.1848.1053" timestamp="1604045310526" />
-    <state width="1802" height="41" key="GridCell.Tab.0.left/72.27.1848.2133@72.27.1848.2133" timestamp="1603370195968" />
-    <state width="1802" height="404" key="GridCell.Tab.0.right" timestamp="1604508135495">
-      <screen x="72" y="27" width="1848" height="1053" />
-    </state>
-    <state width="1802" height="229" key="GridCell.Tab.0.right/0.1080.1920.1080/72.27.1848.1053@72.27.1848.1053" timestamp="1601989482571" />
-    <state width="1874" height="-36" key="GridCell.Tab.0.right/72.0.1848.1080/0.1080.1920.1080@0.1080.1920.1080" timestamp="1604396978308" />
-    <state width="1802" height="404" key="GridCell.Tab.0.right/72.27.1848.1053/0.1080.1920.1080@72.27.1848.1053" timestamp="1604508135495" />
-    <state width="1802" height="325" key="GridCell.Tab.0.right/72.27.1848.1053@72.27.1848.1053" timestamp="1604045310527" />
-    <state width="1802" height="41" key="GridCell.Tab.0.right/72.27.1848.2133@72.27.1848.2133" timestamp="1603370195968" />
-    <state x="275" y="32" width="1022" height="737" key="SettingsEditor" timestamp="1602606641840">
-      <screen x="72" y="27" width="1848" height="1053" />
-    </state>
-    <state x="275" y="32" width="1022" height="737" key="SettingsEditor/72.27.1848.1053/0.1080.1920.1080@72.27.1848.1053" timestamp="1602606641840" />
-    <state x="172" y="127" width="1648" height="853" key="com.android.tools.idea.avdmanager.AvdListDialog" timestamp="1602611212212">
-      <screen x="72" y="27" width="1848" height="1053" />
-    </state>
-    <state x="172" y="127" width="1648" height="853" key="com.android.tools.idea.avdmanager.AvdListDialog/72.27.1848.1053/0.1080.1920.1080@72.27.1848.1053" timestamp="1602611212212" />
-    <state x="649" y="1238" width="683" height="771" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1603354460349">
-      <screen x="72" y="27" width="1848" height="2133" />
-    </state>
-    <state x="649" y="1238" width="683" height="771" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/72.27.1848.2133@72.27.1848.2133" timestamp="1603354460349" />
-    <state x="551" y="272" width="880" height="609" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1602611491272">
-      <screen x="72" y="27" width="1848" height="1053" />
-    </state>
-    <state x="551" y="272" width="880" height="609" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/72.27.1848.1053/0.1080.1920.1080@72.27.1848.1053" timestamp="1602611491272" />
-    <state x="568" y="258" width="855" height="590" key="find.popup" timestamp="1603374281980">
-      <screen x="72" y="27" width="1848" height="1053" />
-    </state>
-    <state x="568" y="258" width="855" height="590" key="find.popup/0.1080.1920.1080/72.27.1848.1053@72.27.1848.1053" timestamp="1601988518677" />
-    <state x="568" y="258" width="855" height="590" key="find.popup/72.27.1848.1053@72.27.1848.1053" timestamp="1603374281980" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <default-breakpoints>
-        <breakpoint suspend="THREAD" type="dart-exception" />
-      </default-breakpoints>
-    </breakpoint-manager>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="masterDetails">
     <states>

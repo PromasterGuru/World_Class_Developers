@@ -94,6 +94,8 @@ public class MainActivity extends AppCompatActivity implements IGithubUsersView,
 
     @Override
     public void onRefresh() {
+        adapter.clear();
+        page = 0;
         loadGithubUsers(query, page);
     }
 
@@ -152,6 +154,7 @@ public class MainActivity extends AppCompatActivity implements IGithubUsersView,
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
+                adapter.clear();
                 searchDeveloper(query);
                 return false;
             }

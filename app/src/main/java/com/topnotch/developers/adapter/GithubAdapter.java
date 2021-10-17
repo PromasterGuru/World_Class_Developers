@@ -32,30 +32,6 @@ public class GithubAdapter extends RecyclerView.Adapter<GithubAdapter.ViewHolder
         this.onFilterListener = onFilterListener;
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
-        public View parent;
-        public TextView tvUsername;
-        public CircleImageView circleImageView;
-
-        public ViewHolder(View v) {
-            super(v);
-            parent = ((ViewGroup) v).getChildAt(0);
-            tvUsername = v.findViewById(R.id.txtUsername);
-            circleImageView = v.findViewById(R.id.imgUser);
-        }
-
-        @Override
-        public void onClick(View v) {
-            onClickListener.onClick(parent);
-        }
-
-        public void bind(GithubUser githubUser) {
-            tvUsername.setText(githubUser.getLogin());
-            Picasso.get().load(githubUser.getAvatarUrl()).into(circleImageView);
-            parent.setTag(githubUser);
-        }
-    }
-
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         return new ViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.activity_users, parent, false));
@@ -72,17 +48,17 @@ public class GithubAdapter extends RecyclerView.Adapter<GithubAdapter.ViewHolder
         return filteredGithubUsers.size();
     }
 
+    public void clear() {
+        this.githubUsers.clear();
+        this.filteredGithubUsers.clear();
+        notifyItemRangeChanged(0, getItemCount());
+    }
+
     public void updateUsers(List<GithubUser> users) {
-        if (users.size() >= 50) {
-            this.githubUsers.addAll(users);
-            this.filteredGithubUsers.addAll(users);
-        } else {
-            this.githubUsers.clear();
-            this.filteredGithubUsers.clear();
-            this.githubUsers = users;
-            this.filteredGithubUsers = users;
-        }
-        notifyDataSetChanged();
+        this.githubUsers.addAll(users);
+        this.filteredGithubUsers.addAll(users);
+        notifyItemRangeInserted(getItemCount() - users.size(), users.size());
+        notifyItemRangeChanged(getItemCount() - users.size(), users.size());
     }
 
     @Override
@@ -115,5 +91,29 @@ public class GithubAdapter extends RecyclerView.Adapter<GithubAdapter.ViewHolder
                 notifyDataSetChanged();
             }
         };
+    }
+
+    public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+        public View parent;
+        public TextView tvUsername;
+        public CircleImageView circleImageView;
+
+        public ViewHolder(View v) {
+            super(v);
+            parent = ((ViewGroup) v).getChildAt(0);
+            tvUsername = v.findViewById(R.id.txtUsername);
+            circleImageView = v.findViewById(R.id.imgUser);
+        }
+
+        @Override
+        public void onClick(View v) {
+            onClickListener.onClick(parent);
+        }
+
+        public void bind(GithubUser githubUser) {
+            tvUsername.setText(githubUser.getLogin());
+            Picasso.get().load(githubUser.getAvatarUrl()).into(circleImageView);
+            parent.setTag(githubUser);
+        }
     }
 }
