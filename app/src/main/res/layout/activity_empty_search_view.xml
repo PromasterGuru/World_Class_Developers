@@ -16,6 +16,7 @@
         android:fontFamily="@font/poller_one"
         android:text="@string/search"
         android:textSize="22sp"
+        android:textColor="@color/colorPrimary"
         app:drawableEndCompat="@drawable/ic_search_gray" />
 
     <TextView
@@ -25,6 +26,7 @@
         android:layout_below="@id/tvSearch"
         android:alpha=".6"
         android:gravity="center"
+        android:textColor="@color/colorPrimary"
         android:text="@string/click_search_icon_on_your_keyboard"
         android:textSize="18sp" />
 </RelativeLayout>

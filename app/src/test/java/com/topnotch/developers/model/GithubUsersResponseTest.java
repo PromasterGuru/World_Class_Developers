@@ -8,17 +8,13 @@ import static org.junit.Assert.assertEquals;
 
 public class GithubUsersResponseTest {
 
-    private GithubUsersResponse usersResponse;
-    private ArrayList<GithubUsers> githubUsers = new ArrayList<>();
-    GithubUsers githubUsers1 = new GithubUsers("PromasterGuru", "https://avatars0.githubusercontent.com/u/39240075?v=4");
-    GithubUsers githubUsers2 = new GithubUsers("k33ptoo", "https://avatars0.githubusercontent.com/u/6637970?v=4");
-    GithubUsers githubUsers3 = new GithubUsers("jumaallan", "https://avatars3.githubusercontent.com/u/25085146?v=4");
     @Test
-    public void getGithubUsersList() {
-        githubUsers.add(githubUsers1);
-        githubUsers.add(githubUsers2);
-        githubUsers.add(githubUsers3);
-        usersResponse = new GithubUsersResponse(githubUsers);
-        assertEquals(githubUsers, usersResponse.getGithubUsersList());
+    public void getGithubUserList() {
+        ArrayList<GithubUser> githubUsers = new ArrayList<>(){{
+            add(new GithubUser("PromasterGuru", "https://avatars0.githubusercontent.com/u/39240075?v=4"));
+            add(new GithubUser("k33ptoo", "https://avatars0.githubusercontent.com/u/6637970?v=4"));
+            add(new GithubUser("jumaallan", "https://avatars3.githubusercontent.com/u/25085146?v=4"));
+        }};
+        assertEquals(githubUsers, new GithubUsersResponse(githubUsers).getGithubUsers());
     }
 }

@@ -1,70 +1,67 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_height="wrap_content"
-    android:layout_width="match_parent" >
-    <LinearLayout
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <RelativeLayout
+        android:id="@+id/rlProfile"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:id="@+id/user_details">
+        android:orientation="vertical">
 
         <RelativeLayout
+            android:id="@+id/rlProfilePic"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/toolbar_color"
-            android:layout_marginBottom="8dp">
-
-            <TextView
-                android:id="@+id/profile_name"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="12dp"
-                android:text="@string/txtProfile"
-                android:textAppearance="?android:textAppearanceMedium"
-                android:layout_centerHorizontal="true"
-                android:textColor="@color/toolbar_text_color"
-                android:textStyle="bold"/>
+            android:background="@color/colorPrimary"
+            android:paddingBottom="8dp">
 
             <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/userProfile"
                 android:layout_width="200dp"
                 android:layout_height="200dp"
                 android:layout_centerHorizontal="true"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="8dp"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="12dp"
+                android:layout_marginBottom="12dp"
                 android:contentDescription="@string/img_description"
-                android:layout_below="@id/profile_name"/>
+                android:src="@mipmap/ic_launcher_round" />
 
             <TextView
                 android:id="@+id/userName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="@color/toolbar_text_color"
                 android:layout_below="@id/userProfile"
+                android:layout_centerHorizontal="true"
                 android:textAppearance="?android:textAppearanceLarge"
-                android:textStyle="bold"
-                android:layout_centerHorizontal="true"/>
+                android:textColor="@color/toolbar_text_color"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/userCreate_date"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textAppearance="?android:textAppearanceSmall"
-                android:layout_centerHorizontal="true"
                 android:layout_below="@id/userName"
+                android:layout_centerHorizontal="true"
                 android:paddingBottom="36dp"
-                android:textColor="@color/toolbar_text_color"/>
+                android:textAppearance="?android:textAppearanceSmall"
+                android:textColor="@color/toolbar_text_color" />
 
         </RelativeLayout>
 
         <LinearLayout
+            android:id="@+id/llProjects"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_below="@id/rlProfilePic"
             android:background="@drawable/my_rect"
             android:elevation="4dp"
-            android:padding="4dp"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:padding="4dp">
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -75,138 +72,163 @@
                     android:id="@+id/imgOrganization"
                     android:layout_width="48dp"
                     android:layout_height="48dp"
-                    android:paddingTop="4dp"
-                    android:paddingLeft="16dp"
-                    android:src="@drawable/ic_organization"
                     android:contentDescription="@string/img_organization"
-                    android:scaleType="centerCrop"/>
+                    android:paddingStart="16dp"
+                    android:paddingTop="4dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/ic_organization"
+                    app:tint="@color/colorAccent"
+                    tools:ignore="RtlSymmetry" />
 
                 <TextView
                     android:id="@+id/userOrgs"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:paddingTop="12dp"
+                    android:layout_toRightOf="@id/imgOrganization"
                     android:paddingLeft="4dp"
+                    android:paddingTop="12dp"
                     android:textAppearance="?android:textAppearanceMedium"
-                    android:textStyle="bold"
-                    android:layout_toRightOf="@id/imgOrganization"/>
+                    android:textStyle="bold" />
             </RelativeLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginTop="8dp">
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal">
 
                 <TextView
                     android:id="@+id/userFollowers"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:textStyle="bold"
-                    android:textColor="@color/colorPrimaryDark"
+                    android:drawableTop="@drawable/ic_followers"
                     android:gravity="center"
-                    android:textAppearance="?android:textAppearanceMedium"/>
+                    android:text="0"
+                    android:textAppearance="?android:textAppearanceMedium"
+                    android:textColor="@color/colorAccent"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/userFollowing"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:textColor="@color/colorPrimaryDark"
-                    android:textStyle="bold"
+                    android:text="0"
+                    android:drawableTop="@drawable/ic_following"
                     android:gravity="center"
-                    android:textAppearance="?android:textAppearanceMedium"/>
+                    android:textAppearance="?android:textAppearanceMedium"
+                    android:textColor="@color/colorAccent"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/userRepositories"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:textColor="@color/colorPrimaryDark"
-                    android:textStyle="bold"
+                    android:text="0"
+                    android:drawableTop="@drawable/ic_repositories"
                     android:gravity="center"
-                    android:textAppearance="?android:textAppearanceMedium"/>
+                    android:textAppearance="?android:textAppearanceMedium"
+                    android:textColor="@color/colorAccent"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/userGists"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:textColor="@color/colorPrimaryDark"
-                    android:textStyle="bold"
+                    android:text="0"
+                    android:drawableTop="@drawable/ic_gists"
                     android:gravity="center"
-                    android:textAppearance="?android:textAppearanceMedium"/>
+                    android:textAppearance="?android:textAppearanceMedium"
+                    android:textColor="@color/colorAccent"
+                    android:textStyle="bold" />
 
             </LinearLayout>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:layout_marginBottom="@dimen/lb_10_sp"
+                android:orientation="horizontal"
+                android:paddingVertical="8dp">
 
                 <TextView
                     android:id="@+id/txtFollowers"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="@string/txtFollowers"
                     android:gravity="center"
-                    android:textAppearance="?android:textAppearanceSmall"/>
+                    android:text="@string/txtFollowers"
+                    android:textAppearance="?android:textAppearanceSmall" />
 
                 <TextView
                     android:id="@+id/txtFollowing"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="@string/txtFollowing"
                     android:gravity="center"
-                    android:textAppearance="?android:textAppearanceSmall"/>
+                    android:text="@string/txtFollowing"
+                    android:textAppearance="?android:textAppearanceSmall" />
 
                 <TextView
                     android:id="@+id/txtRepositories"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="@string/txtRepos"
                     android:gravity="center"
-                    android:textAppearance="?android:textAppearanceSmall"/>
+                    android:text="@string/txtRepos"
+                    android:textAppearance="?android:textAppearanceSmall" />
 
                 <TextView
                     android:id="@+id/txtGists"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="@string/txtGists"
                     android:gravity="center"
-                    android:textAppearance="?android:textAppearanceSmall"/>
+                    android:text="@string/txtGists"
+                    android:textAppearance="?android:textAppearanceSmall" />
 
             </LinearLayout>
         </LinearLayout>
+
         <RelativeLayout
+            android:id="@+id/rlBio"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginBottom="16dp"
-            android:layout_marginTop="4dp">
+            android:layout_below="@id/llProjects"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="16dp">
 
             <TextView
                 android:id="@+id/txtBio"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/txtBio"
                 android:layout_marginTop="12dp"
-                android:textStyle="bold"
                 android:paddingLeft="16dp"
                 android:paddingRight="16dp"
-                android:textColor="@color/username_color"
-                android:textAppearance="?android:textAppearanceLarge"/>
+                android:text="@string/txtBio"
+                android:textAppearance="?android:textAppearanceLarge"
+                android:textColor="@color/colorPrimary"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/userBioInformation"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_below="@id/txtBio"
                 android:paddingLeft="16dp"
                 android:paddingRight="16dp"
-                android:layout_below="@id/txtBio"/>
+                android:textColor="@color/colorPrimary" />
         </RelativeLayout>
-    </LinearLayout>
-</ScrollView>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="10dp"
+            android:src="@drawable/ic_connect" />
+    </RelativeLayout>
+</androidx.core.widget.NestedScrollView>

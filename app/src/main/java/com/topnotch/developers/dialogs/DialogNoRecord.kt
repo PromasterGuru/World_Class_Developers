@@ -1,32 +1,31 @@
 package com.topnotch.developers.dialogs
 
-import android.app.Dialog
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.view.Window
 import androidx.fragment.app.DialogFragment
 import com.topnotch.developers.databinding.DialogNoRecordBinding
+import com.topnotch.developers.interfaces.IOnRecordNotFound
 
-class DialogNoRecord(query: String) : DialogFragment() {
+class DialogNoRecord(private val onRecordNotFoiund: IOnRecordNotFound, private val query: String) : DialogFragment() {
     private lateinit var binding: DialogNoRecordBinding
-    private var query = query
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
-                              savedInstanceState: Bundle?): View? {
-        binding = DialogNoRecordBinding.inflate(layoutInflater)
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        binding = DialogNoRecordBinding.inflate(layoutInflater, container, false)
         val view = binding.root
-        binding.tvTitle.text = String.format("%s %s", query, "not found!")
+        binding.tvTitle.text = String.format(
+            "%s %s",
+            if (query.contains(":")) query.substringAfter(":") else query,
+            "not found!"
+        )
         binding.btnOk.setOnClickListener {
+            onRecordNotFoiund.onRecordNotFound(true)
             dismiss()
         }
         return view
-    }
-
-    override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
-        val dialog = super.onCreateDialog(savedInstanceState)
-        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
-        return dialog
     }
 }

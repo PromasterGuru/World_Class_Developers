@@ -1,5 +1,11 @@
 package com.topnotch.developers.view;
 
+import static androidx.test.espresso.Espresso.onView;
+import static androidx.test.espresso.assertion.ViewAssertions.matches;
+import static androidx.test.espresso.matcher.ViewMatchers.isDisplayed;
+import static androidx.test.espresso.matcher.ViewMatchers.withId;
+import static androidx.test.espresso.matcher.ViewMatchers.withText;
+
 import android.content.Intent;
 
 import androidx.test.espresso.IdlingRegistry;
@@ -13,12 +19,6 @@ import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-
-import static androidx.test.espresso.Espresso.onView;
-import static androidx.test.espresso.assertion.ViewAssertions.matches;
-import static androidx.test.espresso.matcher.ViewMatchers.isDisplayed;
-import static androidx.test.espresso.matcher.ViewMatchers.withId;
-import static androidx.test.espresso.matcher.ViewMatchers.withText;
 
 @RunWith(AndroidJUnit4.class)
 public class DetailActivityTest {
@@ -44,7 +44,6 @@ public class DetailActivityTest {
     public void userProfileInformation_isDisplayed(){
         registerIdlingResource();
         onView(withId(R.id.userName)).check(matches(withText("TheDancerCodes")));
-        onView(withId(R.id.profile_name)).check(matches(withText("Profile")));
         onView(withId(R.id.userProfile)).check(matches(isDisplayed()));
         onView(withId(R.id.txtBio)).check(matches(withText("Bio")));
         onView(withId(R.id.imgOrganization)).check(matches(isDisplayed()));
