@@ -37,7 +37,7 @@ open class BaseActivity : AppCompatActivity() {
                 is HttpException -> showToast(getString(R.string.not_found_try_again))
                 else -> showToast(getString(R.string.erro_while_loading))
             }
-            (error as Exception).printStackTrace()
+            throw error as Throwable
         } catch (ex: Exception) {
             ex.printStackTrace()
         }

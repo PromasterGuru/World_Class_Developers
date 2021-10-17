@@ -84,13 +84,19 @@ class MainActivity : BaseActivity(), OnInternetRetryListener, RecyclerItemClickL
         searchView.setSearchableInfo(searchManager.getSearchableInfo(componentName))
         searchView.maxWidth = Int.MAX_VALUE
         searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
-            override fun onQueryTextSubmit(query: String): Boolean {
-                presenter.requestUsersDataFromServer(query, page, PAGE_LIMIT)
+            override fun onQueryTextSubmit(q: String): Boolean {
+                if (q.isNotEmpty()) {
+                    presenter.requestUsersDataFromServer(q, page, PAGE_LIMIT)
+                    return true
+                }
                 return false
             }
 
-            override fun onQueryTextChange(query: String): Boolean {
-//                adapter.getFilter().filter(query)
+            override fun onQueryTextChange(q: String): Boolean {
+                if (q.isEmpty()) {
+                    presenter.requestUsersDataFromServer(query, page, PAGE_LIMIT)
+                    return true
+                }
                 return false
             }
         })
@@ -98,7 +104,6 @@ class MainActivity : BaseActivity(), OnInternetRetryListener, RecyclerItemClickL
     }
 
     override fun onRetry(retry: Boolean) {
-        binding.swipeRefresh.isRefreshing = false
         presenter.requestUsersDataFromServer(query, page, PAGE_LIMIT)
     }
 
@@ -111,11 +116,13 @@ class MainActivity : BaseActivity(), OnInternetRetryListener, RecyclerItemClickL
 
     override fun showProgress() {
         isLoading = true
+        binding.swipeRefresh.isRefreshing = false
         progressBar.visibility = View.VISIBLE
     }
 
     override fun hideProgress() {
         isLoading = false
+        binding.swipeRefresh.isRefreshing = false
         progressBar.visibility = View.GONE
     }
 

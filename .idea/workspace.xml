@@ -15,75 +15,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6feaf8bb-7b95-4c25-8e8a-0e4db5e6978e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/topnotch/developers/adapter/GithubAdapter.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/topnotch/developers/interfaces/IMainContract.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/topnotch/developers/interfaces/IOnRecordNotFound.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/topnotch/developers/interfaces/RecyclerItemClickListener.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/topnotch/developers/model/GithubUser.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/topnotch/developers/model/GithubUserProfile.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/topnotch/developers/model/GithubUsersResponse.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/topnotch/developers/presenterImpl/GithubUserProfilePresenterIml.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/topnotch/developers/presenterImpl/GithubUsersPresenterImpl.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/topnotch/developers/service/GetProfileNoticeIntractorImpl.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/topnotch/developers/service/GetUsersNoticeIntractorImpl.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/topnotch/developers/service/GithubApi.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/topnotch/developers/service/GithubApiService.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/topnotch/developers/util/DateUtils.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/topnotch/developers/view/BaseActivity.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/topnotch/developers/view/DetailActivity.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/topnotch/developers/view/MainActivity.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/topnotch/developers/view/WebViewController.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/topnotch/developers/viewholders/GithubUsersHolder.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_connect.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_followers.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_following.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_gists.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_repositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/spinner.gif" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/cache.properties" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/cache.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/assetWizardSettings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/assetWizardSettings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/androidTest/java/com/topnotch/developers/ExampleInstrumentedTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/androidTest/java/com/topnotch/developers/view/DetailActivityTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/androidTest/java/com/topnotch/developers/view/DetailActivityTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/topnotch/developers/adapter/GithubAdapter.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/topnotch/developers/dialogs/DialogNoRecord.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/topnotch/developers/dialogs/DialogNoRecord.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/topnotch/developers/interfaces/IGithubUserProfileView.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/topnotch/developers/interfaces/IGithubUsersPresenter.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/topnotch/developers/interfaces/IGithubUsersView.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/topnotch/developers/interfaces/IOnFilterListener.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/topnotch/developers/model/GithubUser.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/topnotch/developers/model/GithubUserProfile.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/topnotch/developers/model/GithubUsersResponse.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/topnotch/developers/presenter/GithubPresenter.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/topnotch/developers/presenter/GithubProfilePresenter.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/topnotch/developers/service/GithubApi.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/topnotch/developers/service/GithubService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/topnotch/developers/view/DetailActivity.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/topnotch/developers/view/MainActivity.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/topnotch/developers/view/WebViewController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/ic_call.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_call.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/ic_email.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_email.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/ic_exit.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_exit.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/ic_search_gray.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_search_gray.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/ic_share.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_share.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/my_rect.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/my_rect.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_detail.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_detail.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_empty_search_view.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_empty_search_view.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_users.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_users.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/dialog_no_record.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/dialog_no_record.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/styles.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/styles.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/test/java/com/topnotch/developers/model/GithubUsersResponseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/com/topnotch/developers/model/GithubUsersResponseTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/topnotch/developers/view/BaseActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/topnotch/developers/view/BaseActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/topnotch/developers/view/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/topnotch/developers/view/MainActivity.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,7 +28,7 @@
   <component name="CodeInsightWorkspaceSettings">
     <option name="optimizeImportsOnTheFly" value="true" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[/Users/promasterguru/.android/avd/Pixel_3a_API_31_arm64-v8a.avd]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[adb-R58M45LM65W-vODvFK._adb-tls-connect._tcp.]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
